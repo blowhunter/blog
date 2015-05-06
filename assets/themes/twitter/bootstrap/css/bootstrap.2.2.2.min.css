@@ -779,7 +779,7 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .visible-tablet{display:none !important;}
 .hidden-desktop{display:none !important;}
 .visible-desktop{display:inherit !important;}
-.container-narrow { margin: 100px auto; max-width: 900px; }
+.container-narrow { margin: 100px auto; max-width: 80%; }
 .card{ padding: 20px 40px; margin-top: 50px; /*border-radius: 7px; box-shadow: 1px 1px 5px #eee;*/ }
 .date_label{position: relative; float:left; width:48px; height:50px; color: #fff; text-align: center; background: #00a9a9; margin-left: -56px; margin-top: -10px; }
 
