@@ -34,7 +34,7 @@ h1{
 .read_more {
   padding: 10px 20px;
 
-  background-color: #fff;
+  background-color: #3F3F3F;
 }
 
 
@@ -110,4 +110,47 @@ h1{
 }
 .page.card{
     background:url("img/card_bg.jpg") repeat top center;
+}
+.textarea-wrapper{
+	background: none repeat scroll 0% 0% rgba(17, 90, 82, 0.65) !important;
+	border-radius: 0px !important;
+}
+.body.dark .nav > ul > li.active > a, body.dark .nav > ul > li.active > a:hover {
+	color: rgb(75, 57, 57) !important;
+}
+
+.body.dark .nav > ul > li > div > a {
+    color: #35AB82 !important;
+	text-shadow: none;
+}
+
+.body.dark #footer ul li a {
+   color: rgba(198, 95, 95, 0.5) !important;
+}
+
+.body.dark h6 {
+    color: rgba(36, 9, 89, 0.6) !important;
+}
+
+.input-wrapper input {
+    background: none repeat scroll 0% 0% #8CAE2F !important;
+}
+
+.body.dark .acceptance-wrapper, body.dark .postbox section label {
+    color: rgba(22, 17, 29, 0.6) !important;
+}
+
+.dark .discovery-col-header h2 strong {
+    color: #7FB961;
+}
+
+.dark .doublethumbnails .discovery-post .inline-meta {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(44, 38, 38, 0.8);
+}
+
+.dark .discovery-options .discovery-help {
+    color: rgba(116, 30, 30, 0.5) !important;
+    background: none repeat scroll 0% 0% rgba(96, 91, 91, 0.3);
 }
