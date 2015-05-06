@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 寂寞先生
-tagline: 这，是一个寂寞的世界……
+title: 陋室蔷薇
+tagline: 简陋破败中寻找生命的真迹..
 ---
 {% include JB/setup %}
 
