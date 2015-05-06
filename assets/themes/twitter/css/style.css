@@ -19,12 +19,12 @@ h1{
 /*page container -- card style -- */
 .nav-narrow{  
   margin: 0 auto;
-  max-width: 900px;}
+  max-width: 85%;}
 
 
 
 .card { 
-  max-width: 900px;
+  max-width: 100%;
   background:#fff; 
   }
 
