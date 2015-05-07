@@ -12,16 +12,20 @@ h1{
   }
 
 .navbar .nav {  
-  float: right; }
+	float: right; }
 
 
 
 /*page container -- card style -- */
 .nav-narrow{  
-  margin: 0 auto;
-  max-width: 85%;}
+  	margin: 0 auto;
+	max-width: 85%;
+	transition: 1s;
+}
 
-
+.nav-narrow.scrollChange {
+	max-width: 1000px;
+}
 
 .card { 
   max-width: 100%;
