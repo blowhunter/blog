@@ -1,9 +1,9 @@
 body{ 
-	font-family: Iosveka,Arial,"XHei","楷体";
+	font-family: Iosveka,Arial,"XHei Classic";
 	background: url("img/body_bg.png") repeat;
 }
 h1{
-    font-family: Iosveka,Arial,"XHei","楷体";
+    font-family: Iosveka,Arial,"XHei Classic";
 }
 .fa.fa-arrow-circle-right{
     margin-right: 15px;
@@ -15,8 +15,8 @@ h1{
   }
 
 .navbar .nav {  
-	float: right; }
-
+	float: right; 
+}
 
 
 /*page container -- card style -- */
