@@ -29,7 +29,7 @@ h1{
 
 .card { 
   max-width: 100%;
-  background:#065059; 
+  background: rgba(33, 33, 33, 0.65); 
   }
 
 .container-narrow > hr { 
