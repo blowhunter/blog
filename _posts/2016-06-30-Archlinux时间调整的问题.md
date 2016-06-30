@@ -36,7 +36,9 @@ published: true
   ntpq -p                             #稍后运行，查看同步情况</pre>
 
   返回的信息:
-	>  <| remote      | refid      | st    | t    | when   | poll  | reach | delay | offset    | jitter | | :------------- | :------------- :|:------------- :|:------------- :|:------------- :|:------------- :|:------------- |:------------- :|:------------- | | time4.aliyun.co  | .STEP.      | 16      | u    | 47m   | 1024  |0  | 0.000 | 0.000 | 0.000 |
+	>  | remote      | refid      | st    | t    | when   | poll  | reach | delay | offset    |jitter |
+	| :------------- | :------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |
+	| time4.aliyun.co  | .STEP.      | 16      | u    | 47m   | 1024  |0  | 0.000 | 0.000 | 0.000 |
 
 - 查看同步成功后的时间信息:
   <pre class="prettyprint linenums">
@@ -51,4 +53,4 @@ published: true
   > NTP synchronized: yes  
   > RTC in local TZ: no  
 
-**--本文结束--**         
+**--本文结束--**            
