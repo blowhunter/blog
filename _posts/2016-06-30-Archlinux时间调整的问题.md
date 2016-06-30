@@ -30,9 +30,9 @@ published: true
   hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
   <pre class="prettyprint linenums">
-  sudo pacman -S ntp  #安装ntp包  
-  sudo systemctl start ntpd.service   #启动ntpd服务  
-  sudo systemctl enable ntpd.service  #开启启动服务  
+  sudo pacman -S ntp  #安装ntp包
+  sudo systemctl start ntpd.service   #启动ntpd服务
+  sudo systemctl enable ntpd.service  #开启启动服务
   ntpq -p                             #稍后运行，查看同步情况</pre>
 
   返回的信息:
@@ -44,7 +44,7 @@ published: true
   <pre class="prettyprint linenums">
   timedatectl status</pre>
 
-  返回的信息:   
+  返回的信息:         
   >local time: 四 2016-06-30 09:39:43 CST  
   >Universal time: 四 2016-06-30 01:39:43 UTC  
   >RTC time: 四 2016-06-30 01:39:43  
