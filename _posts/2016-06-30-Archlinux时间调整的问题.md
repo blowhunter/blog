@@ -37,14 +37,9 @@ published: true
 
   返回的信息:  
 
-  | Header One     | Header Two     |
-  | :------------- | :------------- |
-  | Item One       | Item Two       |
-
-
 	| remote      | refid      | st    | t    | when   | poll  | reach | delay | offset    | jitter    |
 	| :------------- | :------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |
-	| time4.aliyun.co  | .STEP.      | 16      | u    | 47m   | 1024  |0  | 0.000 | 0.000 | 0.000 |
+	|  time4.aliyun.co   |  .STEP.       |  16       |  u     |  47m    |  1024   |  0   |  0.000  |  0.000  |  0.000  |
 
 - 查看同步成功后的时间信息:
   <pre class="prettyprint linenums">
