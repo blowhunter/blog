@@ -15,13 +15,13 @@ published: true
   <pre class="prettyprint linenums">
   timedatectl status    #查看当前的时间信息命令</pre>
   返回的信息:
-  >   Local time: 四 2016-06-30 16:56:07 CST
-      Universal time: 四 2016-06-30 08:56:07 UTC
-      RTC time: 四 2016-06-30 16:56:07
-      Time zone: Asia/Shanghai (CST, +0800)
-	  Network time on: no
-	  NTP synchronized: no
- 	  RTC in local TZ: yes
+> Local time: 四 2016-06-30 16:56:07 CST
+> Universal time: 四 2016-06-30 08:56:07 UTC
+> RTC time: 四 2016-06-30 16:56:07
+> Time zone: Asia/Shanghai (CST, +0800)
+> Network time on: no
+> NTP synchronized: no
+> RTC in local TZ: yes
  
             
     可以用如下命令设置
@@ -35,9 +35,9 @@ published: true
   sudo systemctl enable ntpd.service  #开启启动服务
   ntpq -p                             #稍后运行，查看同步情况</pre>
   返回的信息:
-  >      remote           refid      st t when poll reach   delay   offset  jitter
-   	 ==============================================================================
-     time4.aliyun.co .STEP.          16 u  47m 1024    0    0.000    0.000   0.000
+>      remote           refid      st t when poll reach   delay   offset  jitter
+>  ==============================================================================
+>  time4.aliyun.co .STEP.          16 u  47m 1024    0    0.000    0.000   0.000
 - 查看同步成功后的时间信息:
   <pre class="prettyprint linenums">
   timedatectl status
