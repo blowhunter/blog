@@ -13,16 +13,15 @@ published: true
 - 出发点：不想变更windows下的设置，而又想避免archlinux设置本地时间导致出问题。所以探求有没有其他的方法，最后在wiki中发现了ntp同步UTC时间的方法。
 - Archlinux环境的时间设置是按照wiki上建议的UTC时钟，时区设置为CST-8，如果默认设置不是这样:
   <pre class="prettyprint linenums">
-  #查看当前的时间信息命令:
-  timedatectl status</pre>
+  timedatectl status    #查看当前的时间信息命令</pre>
   返回的信息:
-  >       Local time: 四 2016-06-30 16:56:07 CST
+  >   Local time: 四 2016-06-30 16:56:07 CST
       Universal time: 四 2016-06-30 08:56:07 UTC
-            RTC time: 四 2016-06-30 16:56:07
-           Time zone: Asia/Shanghai (CST, +0800)
-	 Network time on: no
-	NTP synchronized: no
- 	 RTC in local TZ: yes
+      RTC time: 四 2016-06-30 16:56:07
+      Time zone: Asia/Shanghai (CST, +0800)
+	  Network time on: no
+	  NTP synchronized: no
+ 	  RTC in local TZ: yes
  
             
     可以用如下命令设置
@@ -36,20 +35,20 @@ published: true
   sudo systemctl enable ntpd.service  #开启启动服务
   ntpq -p                             #稍后运行，查看同步情况</pre>
   返回的信息:
-  >        remote           refid      st t when poll reach   delay   offset  jitter
-   	   ==============================================================================
-       time4.aliyun.co .STEP.          16 u  47m 1024    0    0.000    0.000   0.000
+  >      remote           refid      st t when poll reach   delay   offset  jitter
+   	 ==============================================================================
+     time4.aliyun.co .STEP.          16 u  47m 1024    0    0.000    0.000   0.000
 - 查看同步成功后的时间信息:
   <pre class="prettyprint linenums">
   timedatectl status
   </pre>
-  >  		Local time: 四 2016-06-30 09:39:43 CST
- 		Universal time: 四 2016-06-30 01:39:43 UTC
-        	  RTC time: 四 2016-06-30 01:39:43
-       	     Time zone: Asia/Shanghai (CST, +0800)
- 	   Network time on: no
-	  NTP synchronized: yes
-	   RTC in local TZ: no
+  >  local time: 四 2016-06-30 09:39:43 CST
+ 	 Universal time: 四 2016-06-30 01:39:43 UTC
+     RTC time: 四 2016-06-30 01:39:43
+     Time zone: Asia/Shanghai (CST, +0800)
+ 	 Network time on: no
+	 NTP synchronized: yes
+	 RTC in local TZ: no
 
 **--本文结束--**            
 
