@@ -35,7 +35,12 @@ published: true
   sudo systemctl enable ntpd.service  #开启启动服务
   ntpq -p                             #稍后运行，查看同步情况</pre>
 
-  返回的信息:
+  返回的信息:  
+  | Header One     | Header Two     |
+  | :------------- | :------------- |
+  | Item One       | Item Two       |
+
+
 	| remote      | refid      | st    | t    | when   | poll  | reach | delay | offset    | jitter    |
 	| :------------- | :------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |:------------- |
 	| time4.aliyun.co  | .STEP.      | 16      | u    | 47m   | 1024  |0  | 0.000 | 0.000 | 0.000 |
