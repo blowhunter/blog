@@ -36,6 +36,7 @@ published: true
   ntpq -p                             #稍后运行，查看同步情况</pre>
 
   返回的信息:  
+
   | Header One     | Header Two     |
   | :------------- | :------------- |
   | Item One       | Item Two       |
