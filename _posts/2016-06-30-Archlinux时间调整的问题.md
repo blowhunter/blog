@@ -24,10 +24,9 @@ published: true
 	>NTP synchronized: no  
 	>RTC in local TZ: yes  
 
-
   可以用如下命令设置
   <pre class="prettyprint linenums">
-  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区  
+  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
   hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
   <pre class="prettyprint linenums">
@@ -45,13 +44,13 @@ published: true
   <pre class="prettyprint linenums">
   timedatectl status</pre>
 
-  返回的信息:
-	  >local time: 四 2016-06-30 09:39:43 CST  
-	  >Universal time: 四 2016-06-30 01:39:43 UTC  
-	  >RTC time: 四 2016-06-30 01:39:43  
-	  >Time zone: Asia/Shanghai (CST, +0800)  
-	  >Network time on: no  
-	  >NTP synchronized: yes  
-	  >RTC in local TZ: no  
+  返回的信息:   
+  >local time: 四 2016-06-30 09:39:43 CST  
+  >Universal time: 四 2016-06-30 01:39:43 UTC  
+  >RTC time: 四 2016-06-30 01:39:43  
+  >Time zone: Asia/Shanghai (CST, +0800)  
+  >Network time on: no  
+  >NTP synchronized: yes  
+  >RTC in local TZ: no  
 
 **--本文结束--**            
