@@ -36,7 +36,7 @@ published: true
       sudo pacman -S ntp  #安装ntp包
       sudo systemctl start ntpd.service   #启动ntpd服务
       sudo systemctl enable ntpd.service  #开启启动服务
-      ntpq -p                             #稍后运行，查看同步情况</pre>
+      ntpq -p                             #稍后运行，查看同步情况 </pre>
 
   返回的信息:  
 
