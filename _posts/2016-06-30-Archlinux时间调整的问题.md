@@ -26,9 +26,9 @@ published: true
      >  RTC in local TZ: yes  
 
      可以用如下命令设置
-      <pre class="prettyprint linenums">
-      ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
-      hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
+     <pre class="prettyprint linenums">
+  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
+  hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
       <pre class="prettyprint linenums">
       sudo pacman -S ntp  #安装ntp包
