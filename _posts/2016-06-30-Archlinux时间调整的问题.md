@@ -16,6 +16,7 @@ published: true
   timedatectl status    #查看当前的时间信息命令</pre>
 
   返回的信息:
+
 	> Local time: 四 2016-06-30 16:56:07 CST  
 	> Universal time: 四 2016-06-30 08:56:07 UTC  
 	> RTC time: 四 2016-06-30 16:56:07   
@@ -45,7 +46,8 @@ published: true
   <pre class="prettyprint linenums">
   timedatectl status</pre>
 
-  返回的信息:         
+  返回的信息:
+
   > local time: 四 2016-06-30 09:39:43 CST  
   > Universal time: 四 2016-06-30 01:39:43 UTC  
   > RTC time: 四 2016-06-30 01:39:43  
