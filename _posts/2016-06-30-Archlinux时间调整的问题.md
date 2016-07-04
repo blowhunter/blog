@@ -17,13 +17,13 @@ published: true
 
   返回的信息:
 
-     >  Local time: 四 2016-06-30 16:56:07 CST  
-     >  Universal time: 四 2016-06-30 08:56:07 UTC  
-     >  RTC time: 四 2016-06-30 16:56:07   
-     >  Time zone: Asia/Shanghai (CST, +0800)  
-     >  Network time on: no  
-     >  NTP synchronized: no  
-     >  RTC in local TZ: yes  
+ > Local time: 四 2016-06-30 16:56:07 CST  
+ > Universal time: 四 2016-06-30 08:56:07 UTC  
+ > RTC time: 四 2016-06-30 16:56:07   
+ > Time zone: Asia/Shanghai (CST, +0800)  
+ > Network time on: no  
+ > NTP synchronized: no  
+ > RTC in local TZ: yes  
 
      可以用如下命令设置
      <pre class="prettyprint linenums">
