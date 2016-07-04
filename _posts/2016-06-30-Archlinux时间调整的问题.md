@@ -17,24 +17,24 @@ published: true
 
   返回的信息:
 
-	> Local time: 四 2016-06-30 16:56:07 CST  
-	> Universal time: 四 2016-06-30 08:56:07 UTC  
-	> RTC time: 四 2016-06-30 16:56:07   
-	> Time zone: Asia/Shanghai (CST, +0800)  
-	> Network time on: no  
-	> NTP synchronized: no  
-	> RTC in local TZ: yes  
+     >  Local time: 四 2016-06-30 16:56:07 CST  
+     >  Universal time: 四 2016-06-30 08:56:07 UTC  
+     >  RTC time: 四 2016-06-30 16:56:07   
+     >  Time zone: Asia/Shanghai (CST, +0800)  
+     >  Network time on: no  
+     >  NTP synchronized: no  
+     >  RTC in local TZ: yes  
 
-  可以用如下命令设置
-  <pre class="prettyprint linenums">
-  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
-  hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
+     可以用如下命令设置
+      <pre class="prettyprint linenums">
+      ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
+      hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
-  <pre class="prettyprint linenums">
-  sudo pacman -S ntp  #安装ntp包
-  sudo systemctl start ntpd.service   #启动ntpd服务
-  sudo systemctl enable ntpd.service  #开启启动服务
-  ntpq -p                             #稍后运行，查看同步情况</pre>
+      <pre class="prettyprint linenums">
+      sudo pacman -S ntp  #安装ntp包
+      sudo systemctl start ntpd.service   #启动ntpd服务
+      sudo systemctl enable ntpd.service  #开启启动服务
+      ntpq -p                             #稍后运行，查看同步情况</pre>
 
   返回的信息:  
 
