@@ -32,7 +32,6 @@ published: true
     hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 
-
     <pre class="prettyprint linenums">
     sudo pacman -S ntp  #安装ntp包
     sudo systemctl start ntpd.service   #启动ntpd服务
