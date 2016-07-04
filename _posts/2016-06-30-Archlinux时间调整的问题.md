@@ -15,7 +15,7 @@ published: true
     <pre class="prettyprint linenums">
   timedatectl status    #查看当前的时间信息命令</pre>
 
- 返回的信息:
+    返回的信息:
 
     > Local time: 四 2016-06-30 16:56:07 CST  
     > Universal time: 四 2016-06-30 08:56:07 UTC  
@@ -27,8 +27,8 @@ published: true
 
     可以用如下命令设置
     <pre class="prettyprint linenums">
-ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
-hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
+    ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
+    hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
       <pre class="prettyprint linenums">
       sudo pacman -S ntp  #安装ntp包
