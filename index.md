@@ -15,10 +15,15 @@ tagline: 简陋破败中寻找生命的真迹..
       			{{ post.date | date:"%Y" }}
       			</div>
       		</div> 
-		{{ post.title  | | split:'<!--break-->' | first }}
-        {{ post.tag }}
+		<h3><a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title || split:'<!--break-->' | first }}</a></h3> 
 	<div class = "read_more">
-		<a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}">  查看 </a>
+         {% unless site.tags == empty %}
+    		<ul class="tag_box inline ">
+     			<li><i class="icon-tags"></i></li>
+      			{% assign tags_list = post.tags %}
+      			{% include JB/tags_list %}                                                                                                                                        
+    		</ul>
+  		{% endunless %} 
 	</div>
 	
 </div>
