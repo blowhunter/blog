@@ -13,7 +13,7 @@ published: true
 - 出发点：不想变更windows下的设置，而又想避免archlinux设置本地时间导致出问题。所以探求有没有其他的方法，最后在wiki中发现了ntp同步UTC时间的方法。
 - Archlinux环境的时间设置是按照wiki上建议的UTC时钟，时区设置为CST-8，如果默认设置不是这样:
 
-    <pre class="prettyprint linenums">
+    <pre class="prettyprint linenums lang-bash">
   timedatectl status    #查看当前的时间信息命令</pre>
 
     返回的信息:
@@ -27,16 +27,15 @@ published: true
     > RTC in local TZ: yes  
 
     可以用如下命令设置
-    <pre class="prettyprint linenums">
-    ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
-    hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
+  <pre class="prettyprint linenums lang-bash">
+  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置默认时区
+  hwclock --systohc --utc  #调整时间偏差，设置时间标准为UTC时间</pre>
 - 进行ntp时间服务的安装与配置：[参照官方文档](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 
-    <pre class="prettyprint linenums">
-    sudo pacman -S ntp  #安装ntp包
-    sudo systemctl start ntpd.service   #启动ntpd服务
-    sudo systemctl enable ntpd.service  #开启启动服务
-    ntpq -p                             #稍后运行，查看同步情况 </pre>
+  <pre class="prettyprint linenums lang-bash">sudo pacman -S ntp  #安装ntp包
+  sudo systemctl start ntpd.service   #启动ntpd服务
+  sudo systemctl enable ntpd.service  #开启启动服务
+  ntpq -p                             #稍后运行，查看同步情况 </pre>
 
   返回的信息:  
 
@@ -45,7 +44,7 @@ published: true
 	|  time4.aliyun.co   |  .STEP.       |  16       |  u     |  47m    |  1024   |  0   |  0.000  |  0.000  |  0.000  |
 
 - 查看同步成功后的时间信息:
-  <pre class="prettyprint linenums">
+  <pre class="prettyprint linenums lang-bash">
   timedatectl status</pre>
 
   返回的信息:
