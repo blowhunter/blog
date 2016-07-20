@@ -22,7 +22,7 @@ tagline: 简陋破败中寻找生命的真迹..
     		<ul class="tag_box inline ">
      			<li><i class="icon-tags"></i></li>
       			{% assign tags_list = post.tags %}
-      			{% include JB/tags_list %}                                                                                                                                        
+      			{% include JB/tags_list %}
     		</ul>
   		{% endunless %} 
 	</div>
