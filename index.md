@@ -15,7 +15,8 @@ tagline: 简陋破败中寻找生命的真迹..
       		{{ post.date | date:"%Y" }}
       	</div>
     </div> 
-	<h3><a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title || split:'<!--break-->' | first }}</a></h3> 
+	<h3><a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title || split:'<!--break-->' | first }}</a></h3>
+		 浏览量：<span data-hk-page="current"> - </span>次<span class="pause"> | </span>
 	    {{ post.excerpt }} ...
     <div class = "tags">
         {% unless site.tags == empty %}
