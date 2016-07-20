@@ -17,7 +17,7 @@ tagline: 简陋破败中寻找生命的真迹..
     </div> 
 	<h3><a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title || split:'<!--break-->' | first }}</a></h3> 
 	    {{ post.excerpt }} ...
-    <div class = "read_more">
+    <div class = "tags">
         {% unless site.tags == empty %}
     		<ul class="tag_box inline ">
      			<li><i class="icon-tags"></i></li>
