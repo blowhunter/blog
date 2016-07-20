@@ -14,10 +14,11 @@ pre .atv { color: #ffa0a0 } /* attribute value - pink */
 pre .dec { color: #98fb98 } /* decimal         - lightgreen */
 
 /* Specify class=linenums on a pre to get line numbering */
-ol.linenums { font-size: 0.93em;  margin-top: 0; margin-bottom: 0; color: #AEAEAE; background: black; padding: 1px 4px;  } /* IE indents via margin-left */
+ol.linenums { font-size: 0.8em;  margin-top: 0; margin-bottom: 0; color: #AEAEAE; background: black; padding: 1px 4px;  } /* IE indents via margin-left */
 li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: decimal }
 /* Alternate shading for lines */
 li.L1,li.L3,li.L5,li.L7,li.L9 {  list-style-type: decimal }
+span { font-size: 1.14em; }
 
 @media print {
   pre.prettyprint { background-color: none }
