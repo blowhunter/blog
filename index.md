@@ -4,6 +4,7 @@ title: 陋室蔷薇
 tagline: 简陋破败中寻找生命的真迹..
 ---
 {% include JB/setup %}
+访问量：<span data-hk-page="current"> - </span>次
 
 {% for post in site.posts %}
 <div class = "card">
@@ -16,7 +17,6 @@ tagline: 简陋破败中寻找生命的真迹..
       	</div>
     </div> 
 	<h3><a class="fa fa-link" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title || split:'<!--break-->' | first }}</a></h3>
-		 浏览量：<span data-hk-page="current"> - </span>次<span class="pause"> | </span>
 	    {{ post.excerpt }} ...
     <div class = "tags">
         {% unless site.tags == empty %}
