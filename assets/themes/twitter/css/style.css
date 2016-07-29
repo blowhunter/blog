@@ -100,6 +100,9 @@ h1{
   border: 1px solid #4c964d;
   color: #FFF; }
 
+.visit_count{
+    color: black;
+}
 
 
 .hat_title{
@@ -171,17 +174,17 @@ h1{
 }
 
 table {
-    width: 100%; /*±í¸ñ¿í¶È*/
-    max-width: 65em; /*±í¸ñ×î´ó¿í¶È£¬±ÜÃâ±í¸ñ¹ı¿í*/
-    border: 1px solid #dedede; /*±í¸ñÍâ±ß¿òÉèÖÃ*/
-    margin: 15px auto; /*Íâ±ß¾à*/
-    border-collapse: collapse; /*Ê¹ÓÃµ¥Ò»ÏßÌõµÄ±ß¿ò*/
-    empty-cells: show; /*µ¥Ôª¸ñÎŞÄÚÈİÒÀ¾É»æÖÆ±ß¿ò*/
+    width: 100%; /*è¡¨æ ¼å®½åº¦*/
+    max-width: 65em; /*è¡¨æ ¼æœ€å¤§å®½åº¦ï¼Œé¿å…è¡¨æ ¼è¿‡å®½*/
+    border: 1px solid #dedede; /*è¡¨æ ¼å¤–è¾¹æ¡†è®¾ç½®*/
+    margin: 15px auto; /*å¤–è¾¹è·*/
+    border-collapse: collapse; /*ä½¿ç”¨å•ä¸€çº¿æ¡çš„è¾¹æ¡†*/
+    empty-cells: show; /*å•å…ƒæ ¼æ— å†…å®¹ä¾æ—§ç»˜åˆ¶è¾¹æ¡†*/
 }
 
 table th,
 table td {
-  height: 35px; /*Í³Ò»Ã¿Ò»ĞĞµÄÄ¬ÈÏ¸ß¶È*/
-  border: 1px solid #87CECB; /*ÄÚ²¿±ß¿òÑùÊ½*/
-  padding: 0 10px; /*ÄÚ±ß¾à*/
+  height: 35px; /*ç»Ÿä¸€æ¯ä¸€è¡Œçš„é»˜è®¤é«˜åº¦*/
+  border: 1px solid #87CECB; /*å†…éƒ¨è¾¹æ¡†æ ·å¼*/
+  padding: 0 10px; /*å†…è¾¹è·*/
 }
