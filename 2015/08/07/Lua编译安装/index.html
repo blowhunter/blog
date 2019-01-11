@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="首先准备好Lua的源码：下载地址：（官网）地址链接 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
+<meta name="description" content="1. 首先准备好Lua的源码：下载地址：（官网）地址链接 2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
 <meta name="keywords" content="lua">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在win8.1下使用minGW编译器编译Lua-5.3.1">
 <meta property="og:url" content="http://blowhunter.cn/2015/08/07/Lua编译安装/index.html">
 <meta property="og:site_name" content="雪影风清">
-<meta property="og:description" content="首先准备好Lua的源码：下载地址：（官网）地址链接 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
+<meta property="og:description" content="1. 首先准备好Lua的源码：下载地址：（官网）地址链接 2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg">
-<meta property="og:updated_time" content="2019-01-11T07:55:17.081Z">
+<meta property="og:updated_time" content="2019-01-11T09:04:03.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在win8.1下使用minGW编译器编译Lua-5.3.1">
-<meta name="twitter:description" content="首先准备好Lua的源码：下载地址：（官网）地址链接 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
+<meta name="twitter:description" content="1. 首先准备好Lua的源码：下载地址：（官网）地址链接 2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg">
 
 
@@ -300,7 +300,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-11T07:55:17+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-11T09:04:03+00:00">
                 2019-01-11
               </time>
             
@@ -367,34 +367,23 @@
       
 
       
-        <ul>
-<li>首先准备好Lua的源码：<br>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></li>
-<li>准备好minGW编译器，这里用的是codeblocks的minGW编译器。<br>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></li>
-<li>安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：<a id="more"></a>
-<img src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></li>
-<li>然后键入以下路径，请按照安装路径自行修改<pre>
-E:\Program Files (x86)\CodeBlocks\MinGW\bin        #即为mingw32-make.exe所在目录</pre></li>
-<li>将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：<pre>
-cd C:\lua-5.3.1\src\</pre></li>
-<li><p>执行编译命令即可。</p>
-<pre>
-mingw32-make mingw</pre>
-</li>
-<li><p><strong>进阶：</strong><br>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：</p>
-<pre>
-mingw:
-$(MAKE) "LUA_A=lua53.dll" "LUA_T=lua.exe" \
-"AR=$(AR) -o" "RANLIB=strip --strip-unneeded" \
-"SYSCFLAGS=-static" "SYSLIBS=" "SYSLDFLAGS=-s" lua.exe        
-$(MAKE) "LUAC_T=luac.exe" luac.exe
-# 修改"SYSCFLAGS=-DLUA_BUILD_AS_DLL" --> "SYSCFLAGS=-static"
-# "AR=$(CC) -shared -o" --> "AR=$(AR) -o"
-# "LUA_A=lua53.dll" --> "LUA_A=lua53.a"</pre></li>
-<li>然后执行编译命令：<pre>
-mingw32-make mingw</pre>
+        <h1 id="1-首先准备好Lua的源码："><a href="#1-首先准备好Lua的源码：" class="headerlink" title="1. 首先准备好Lua的源码："></a>1. 首先准备好Lua的源码：</h1><p>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></p>
+<h1 id="2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><a href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。" class="headerlink" title="2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。"></a>2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</h1><p>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></p>
+<h1 id="3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><a href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：" class="headerlink" title="3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："></a>3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</h1><a id="more"></a>
+<p>  <img src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
+<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1>  <pre>
+  E:\Program Files (x86)\CodeBlocks\MinGW\bin        #即为mingw32-make.exe所在目录</pre>
+# 5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：
+  <pre>
+  cd C:\lua-5.3.1\src\</pre>
+# 6. 执行编译命令即可。
+  <pre>
+  mingw32-make mingw</pre>
 
-</li>
-</ul>
+<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：<br>  <pre><br>  mingw:<br>  $(MAKE) “LUA_A=lua53.dll” “LUA_T=lua.exe” \<br>  “AR=$(AR) -o” “RANLIB=strip –strip-unneeded” \<br>  “SYSCFLAGS=-static” “SYSLIBS=” “SYSLDFLAGS=-s” lua.exe<br>  $(MAKE) “LUAC_T=luac.exe” luac.exe</pre></p>
+<h1 id="修改”SYSCFLAGS-DLUA-BUILD-AS-DLL”-–-gt-“SYSCFLAGS-static”"><a href="#修改”SYSCFLAGS-DLUA-BUILD-AS-DLL”-–-gt-“SYSCFLAGS-static”" class="headerlink" title="修改”SYSCFLAGS=-DLUA_BUILD_AS_DLL” –&gt; “SYSCFLAGS=-static”"></a>修改”SYSCFLAGS=-DLUA_BUILD_AS_DLL” –&gt; “SYSCFLAGS=-static”</h1><h1 id="“AR-CC-shared-o”-–-gt-“AR-AR-o”"><a href="#“AR-CC-shared-o”-–-gt-“AR-AR-o”" class="headerlink" title="“AR=$(CC) -shared -o” –&gt; “AR=$(AR) -o”"></a>“AR=$(CC) -shared -o” –&gt; “AR=$(AR) -o”</h1><h1 id="“LUA-A-lua53-dll”-–-gt-“LUA-A-lua53-a”"><a href="#“LUA-A-lua53-dll”-–-gt-“LUA-A-lua53-a”" class="headerlink" title="“LUA_A=lua53.dll” –&gt; “LUA_A=lua53.a”"></a>“LUA_A=lua53.dll” –&gt; “LUA_A=lua53.a”</h1><h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1>  <pre>
+  mingw32-make mingw</pre>
+
 <p><strong>–本文结束–</strong></p>
 
       
@@ -486,8 +475,17 @@ mingw32-make mingw</pre>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -547,6 +545,22 @@ mingw32-make mingw</pre>
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-首先准备好Lua的源码："><span class="nav-text">1. 首先准备好Lua的源码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><span class="nav-text">2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><span class="nav-text">3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-然后键入以下路径，请按照安装路径自行修改"><span class="nav-text">4. 然后键入以下路径，请按照安装路径自行修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-进阶："><span class="nav-text">7. 进阶：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改”SYSCFLAGS-DLUA-BUILD-AS-DLL”-–-gt-“SYSCFLAGS-static”"><span class="nav-text">修改”SYSCFLAGS=-DLUA_BUILD_AS_DLL” –&gt; “SYSCFLAGS=-static”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#“AR-CC-shared-o”-–-gt-“AR-AR-o”"><span class="nav-text">“AR=$(CC) -shared -o” –&gt; “AR=$(AR) -o”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#“LUA-A-lua53-dll”-–-gt-“LUA-A-lua53-a”"><span class="nav-text">“LUA_A=lua53.dll” –&gt; “LUA_A=lua53.a”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-然后执行编译命令："><span class="nav-text">8. 然后执行编译命令：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
