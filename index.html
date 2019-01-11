@@ -95,7 +95,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -1446,7 +1446,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-11T07:03:30+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-11T07:55:17+00:00">
                 2019-01-11
               </time>
             
@@ -1514,42 +1514,20 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li>首先准备好Lua的源码：<br>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></li>
 <li>准备好minGW编译器，这里用的是codeblocks的minGW编译器。<br>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></li>
-<li><p>安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</p>
-<p><img src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
-</li>
-<li>然后键入以下路径，请按照安装路径自行修改<pre>
-E:\Program Files (x86)\CodeBlocks\MinGW\bin        #即为mingw32-make.exe所在目录</pre></li>
-<li>将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：<pre>
-cd C:\lua-5.3.1\src\</pre></li>
-<li><p>执行编译命令即可。</p>
-<pre>
-mingw32-make mingw</pre>
-</li>
-<li><p><strong>进阶：</strong><br>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：</p>
-<pre>
-mingw:
-$(MAKE) "LUA_A=lua53.dll" "LUA_T=lua.exe" \
-"AR=$(AR) -o" "RANLIB=strip --strip-unneeded" \
-"SYSCFLAGS=-static" "SYSLIBS=" "SYSLDFLAGS=-s" lua.exe        
-$(MAKE) "LUAC_T=luac.exe" luac.exe
-# 修改"SYSCFLAGS=-DLUA_BUILD_AS_DLL" --> "SYSCFLAGS=-static"
-# "AR=$(CC) -shared -o" --> "AR=$(AR) -o"
-# "LUA_A=lua53.dll" --> "LUA_A=lua53.a"</pre></li>
-<li>然后执行编译命令：<pre>
-mingw32-make mingw</pre>
-
-</li>
-</ul>
-<p><strong>–本文结束–</strong></p>
-
-          
+<li>安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/08/07/Lua编译安装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
     
     
     
