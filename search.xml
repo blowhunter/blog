@@ -58,6 +58,34 @@ set-default-source &quot;mic&quot;
       </tags>
   </entry>
   <entry>
+    <title>Honor7x安装termux</title>
+    <url>/2018/10/19/honor7x%E5%AE%89%E8%A3%85termux/</url>
+    <content><![CDATA[<h1 id="honor7x上安装termux，可以实现很多功能"><a href="#honor7x上安装termux，可以实现很多功能" class="headerlink" title="honor7x上安装termux，可以实现很多功能"></a>honor7x上安装termux，可以实现很多功能</h1><ol>
+<li>打开google play 搜索termux，安装</li>
+<li>7x上打开termux，先使用命令升级<pre><code>pkg update
+</code></pre><a id="more"></a></li>
+<li>安装git curl wegt等工具<pre><code>pkg install git curl wget zsh vim openssh
+</code></pre></li>
+<li>下载termux-styling<pre><code>git clone https://github.com/blowhunter/termux-style.git
+</code></pre></li>
+<li>修改权限，安装，然后按照指引配置即可<pre><code>cd termux-style
+chmod 750 setup
+./setup
+</code></pre></li>
+</ol>
+]]></content>
+      <categories>
+        <category>android</category>
+        <category>terminal</category>
+        <category>termux</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>terminal</tag>
+        <tag>termux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在win8.1下使用minGW编译器编译Lua-5.3.1</title>
     <url>/2015/08/07/Lua%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="1-首先准备好Lua的源码："><a href="#1-首先准备好Lua的源码：" class="headerlink" title="1. 首先准备好Lua的源码："></a>1. 首先准备好Lua的源码：</h1><p>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></p>
@@ -89,34 +117,6 @@ set-default-source &quot;mic&quot;
       </categories>
       <tags>
         <tag>lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Honor7x安装termux</title>
-    <url>/2018/10/19/honor7x%E5%AE%89%E8%A3%85termux/</url>
-    <content><![CDATA[<h1 id="honor7x上安装termux，可以实现很多功能"><a href="#honor7x上安装termux，可以实现很多功能" class="headerlink" title="honor7x上安装termux，可以实现很多功能"></a>honor7x上安装termux，可以实现很多功能</h1><ol>
-<li>打开google play 搜索termux，安装</li>
-<li>7x上打开termux，先使用命令升级<pre><code>pkg update
-</code></pre><a id="more"></a></li>
-<li>安装git curl wegt等工具<pre><code>pkg install git curl wget zsh vim openssh
-</code></pre></li>
-<li>下载termux-styling<pre><code>git clone https://github.com/blowhunter/termux-style.git
-</code></pre></li>
-<li>修改权限，安装，然后按照指引配置即可<pre><code>cd termux-style
-chmod 750 setup
-./setup
-</code></pre></li>
-</ol>
-]]></content>
-      <categories>
-        <category>android</category>
-        <category>terminal</category>
-        <category>termux</category>
-      </categories>
-      <tags>
-        <tag>android</tag>
-        <tag>terminal</tag>
-        <tag>termux</tag>
       </tags>
   </entry>
   <entry>
