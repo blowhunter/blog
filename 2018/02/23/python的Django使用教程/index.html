@@ -18,21 +18,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
+    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1. 建立虚拟环境1.1 安装虚拟环境软件pip install virtualenv  1.2 克隆一个环境为虚拟环境">
+  <meta name="description" content="1. 建立虚拟环境1.1 安装虚拟环境软件1pip install virtualenv 1.2 克隆一个环境为虚拟环境">
 <meta name="keywords" content="blog,博客,日记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python的Django使用教程">
 <meta property="og:url" content="http://blowhunter.cn/2018/02/23/python的Django使用教程/index.html">
 <meta property="og:site_name" content="雪影风清">
-<meta property="og:description" content="1. 建立虚拟环境1.1 安装虚拟环境软件pip install virtualenv  1.2 克隆一个环境为虚拟环境">
+<meta property="og:description" content="1. 建立虚拟环境1.1 安装虚拟环境软件1pip install virtualenv 1.2 克隆一个环境为虚拟环境">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-02-23T07:04:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的Django使用教程">
-<meta name="twitter:description" content="1. 建立虚拟环境1.1 安装虚拟环境软件pip install virtualenv  1.2 克隆一个环境为虚拟环境">
+<meta name="twitter:description" content="1. 建立虚拟环境1.1 安装虚拟环境软件1pip install virtualenv 1.2 克隆一个环境为虚拟环境">
 
 <link rel="canonical" href="http://blowhunter.cn/2018/02/23/python的Django使用教程/">
 
@@ -242,89 +242,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="1-建立虚拟环境"><a href="#1-建立虚拟环境" class="headerlink" title="1. 建立虚拟环境"></a>1. 建立虚拟环境</h1><h2 id="1-1-安装虚拟环境软件"><a href="#1-1-安装虚拟环境软件" class="headerlink" title="1.1 安装虚拟环境软件"></a>1.1 安装虚拟环境软件</h2><pre><code class="bash">pip install virtualenv
-</code></pre>
+        <h1 id="1-建立虚拟环境"><a href="#1-建立虚拟环境" class="headerlink" title="1. 建立虚拟环境"></a>1. 建立虚拟环境</h1><h2 id="1-1-安装虚拟环境软件"><a href="#1-1-安装虚拟环境软件" class="headerlink" title="1.1 安装虚拟环境软件"></a>1.1 安装虚拟环境软件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
 <h2 id="1-2-克隆一个环境为虚拟环境"><a href="#1-2-克隆一个环境为虚拟环境" class="headerlink" title="1.2 克隆一个环境为虚拟环境"></a>1.2 克隆一个环境为虚拟环境</h2><a id="more"></a>
-<pre><code class="bash">virtualenv python2.7
-cd python2.7
-</code></pre>
-<h1 id="2-安装Django"><a href="#2-安装Django" class="headerlink" title="2. 安装Django"></a>2. 安装Django</h1><pre><code class="bash"># 使用==选择要安装的版本
-pip install django==1.11.3
-</code></pre>
-<h1 id="3-创建项目"><a href="#3-创建项目" class="headerlink" title="3. 创建项目"></a>3. 创建项目</h1><pre><code class="bash">django-admin startproject mytest
-cd mytest
-</code></pre>
-<h1 id="4-创建表结构"><a href="#4-创建表结构" class="headerlink" title="4. 创建表结构"></a>4. 创建表结构</h1><pre><code class="bash">python manage.py migrate
-</code></pre>
-<h1 id="5-可以进行简单的测试"><a href="#5-可以进行简单的测试" class="headerlink" title="5. 可以进行简单的测试"></a>5. 可以进行简单的测试</h1><pre><code class="bash">python manage.py runserver
-
-# 默认的可以打开127.0.0.1:8000
-</code></pre>
-<h1 id="6-创建超级管理员用户"><a href="#6-创建超级管理员用户" class="headerlink" title="6. 创建超级管理员用户"></a>6. 创建超级管理员用户</h1><pre><code class="bash">python manage.py createsuperuser
-# 输入用户名、邮箱和密码
-</code></pre>
-<h1 id="7-登录admin的后台"><a href="#7-登录admin的后台" class="headerlink" title="7. 登录admin的后台"></a>7. 登录admin的后台</h1><pre><code class="bash">#在页面可以使用刚才创建的用户和密码进行登录
-# 127.0.0.1:8000/admin
-</code></pre>
-<h1 id="8-创建app应用"><a href="#8-创建app应用" class="headerlink" title="8. 创建app应用"></a>8. 创建app应用</h1><pre><code class="bash">python manage.py startapp myapp
-</code></pre>
-<h1 id="9-将app配置为project-mytest的app"><a href="#9-将app配置为project-mytest的app" class="headerlink" title="9. 将app配置为project-mytest的app"></a>9. 将app配置为project-mytest的app</h1><pre><code class="python"># 先修改myapp下的两个文件
-# 1. 修改views.py
-# 添加内容
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.shortcuts import render
-from django.http import HttpResponse
-
-# Create your views here.
-def index(request):
-    return HttpResponse(&quot;Hello, world! You&#39;re  at my test app index!&quot;)
-</code></pre>
-<pre><code class="python"># 2. 新建urls.py 用于路由刚才新增的views
-# -*- coding: utf-8 -*-
-from django.conf.urls import url
-from . import views
-
-urlpatterns = [
-    url(&#39;&#39;, views.index, name=&#39;index&#39;),
-]
-
-</code></pre>
-<pre><code class="python"># 然后修改mytest目录下的settings.py
-# 将新增的app配置文件增加到其中的Installed_apps
-# Application definition
-
-INSTALLED_APPS = [
-    &#39;django.contrib.admin&#39;,
-    &#39;django.contrib.auth&#39;,
-    &#39;django.contrib.contenttypes&#39;,
-    &#39;django.contrib.sessions&#39;,
-    &#39;django.contrib.messages&#39;,
-    &#39;django.contrib.staticfiles&#39;,
-    &#39;myapp.apps.MyappConfig&#39;,
-]
-</code></pre>
-<pre><code class="python"># 然后在mytest的路由中urls.py 新增到myapp的路径
-# 因为要使用include所以在import中的django.conf.urls中导入include
-from django.conf.urls import url, include
-from django.contrib import admin
-
-urlpatterns = [
-    url(r&#39;^admin/&#39;, admin.site.urls),
-    url(r&#39;^myapp/&#39;, include(&#39;myapp.urls&#39;)),
-]
-</code></pre>
-<h1 id="10-测试新增的myapp是否可用"><a href="#10-测试新增的myapp是否可用" class="headerlink" title="10. 测试新增的myapp是否可用"></a>10. 测试新增的myapp是否可用</h1><pre><code class="bash">python manage.py runserver
-
-# 在浏览器中输入地址：127.0.0.1:8000/myapp/
-</code></pre>
-<p>–<strong>填坑</strong>–<br>当前的Django版本无法引入path，所以官网的教程需要针对2.0版本，本版本可以用url来替代path获取路径以及加载等</p>
-<pre><code class="python">from django.conf.urls import url
-urlpatterns = [
-  url(&#39;&#39;, views.index, name=&#39;index&#39;)
-]
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">virtualenv python2.7</span><br><span class="line"><span class="built_in">cd</span> python2.7</span><br></pre></td></tr></table></figure>
+<h1 id="2-安装Django"><a href="#2-安装Django" class="headerlink" title="2. 安装Django"></a>2. 安装Django</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用==选择要安装的版本</span></span><br><span class="line">pip install django==1.11.3</span><br></pre></td></tr></table></figure>
+<h1 id="3-创建项目"><a href="#3-创建项目" class="headerlink" title="3. 创建项目"></a>3. 创建项目</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject mytest</span><br><span class="line"><span class="built_in">cd</span> mytest</span><br></pre></td></tr></table></figure>
+<h1 id="4-创建表结构"><a href="#4-创建表结构" class="headerlink" title="4. 创建表结构"></a>4. 创建表结构</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<h1 id="5-可以进行简单的测试"><a href="#5-可以进行简单的测试" class="headerlink" title="5. 可以进行简单的测试"></a>5. 可以进行简单的测试</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认的可以打开127.0.0.1:8000</span></span><br></pre></td></tr></table></figure>
+<h1 id="6-创建超级管理员用户"><a href="#6-创建超级管理员用户" class="headerlink" title="6. 创建超级管理员用户"></a>6. 创建超级管理员用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br><span class="line"><span class="comment"># 输入用户名、邮箱和密码</span></span><br></pre></td></tr></table></figure>
+<h1 id="7-登录admin的后台"><a href="#7-登录admin的后台" class="headerlink" title="7. 登录admin的后台"></a>7. 登录admin的后台</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在页面可以使用刚才创建的用户和密码进行登录</span></span><br><span class="line"><span class="comment"># 127.0.0.1:8000/admin</span></span><br></pre></td></tr></table></figure>
+<h1 id="8-创建app应用"><a href="#8-创建app应用" class="headerlink" title="8. 创建app应用"></a>8. 创建app应用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp myapp</span><br></pre></td></tr></table></figure>
+<h1 id="9-将app配置为project-mytest的app"><a href="#9-将app配置为project-mytest的app" class="headerlink" title="9. 将app配置为project-mytest的app"></a>9. 将app配置为project-mytest的app</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先修改myapp下的两个文件</span></span><br><span class="line"><span class="comment"># 1. 修改views.py</span></span><br><span class="line"><span class="comment"># 添加内容</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> unicode_literals</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"Hello, world! You're  at my test app index!"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2. 新建urls.py 用于路由刚才新增的views</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 然后修改mytest目录下的settings.py</span></span><br><span class="line"><span class="comment"># 将新增的app配置文件增加到其中的Installed_apps</span></span><br><span class="line"><span class="comment"># Application definition</span></span><br><span class="line"></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'myapp.apps.MyappConfig'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 然后在mytest的路由中urls.py 新增到myapp的路径</span></span><br><span class="line"><span class="comment"># 因为要使用include所以在import中的django.conf.urls中导入include</span></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url, include</span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^myapp/'</span>, include(<span class="string">'myapp.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h1 id="10-测试新增的myapp是否可用"><a href="#10-测试新增的myapp是否可用" class="headerlink" title="10. 测试新增的myapp是否可用"></a>10. 测试新增的myapp是否可用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在浏览器中输入地址：127.0.0.1:8000/myapp/</span></span><br></pre></td></tr></table></figure>
+<p>–<strong>填坑</strong>–<br>当前的Django版本无法引入path，所以官网的教程需要针对2.0版本，本版本可以用url来替代path获取路径以及加载等<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line">urlpatterns = [</span><br><span class="line">  url(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -464,8 +397,7 @@ urlpatterns = [
   </span>
   <span class="author" itemprop="copyrightHolder">ethan</span>
 </div>
-<body onload="PR.prettyPrint()">
-</body>
+
         
 
 
@@ -722,16 +654,4 @@ window.addEventListener('pjax:success', () => {
 
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css" type="text/javascript"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-  });
-</script>
-<style rel='text/css'> li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: decimal !important;
-}
-</style>
-
 </html>

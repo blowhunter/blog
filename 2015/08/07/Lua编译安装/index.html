@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
+    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1. 首先准备好Lua的源码：下载地址：（官网）地址链接 2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。下载地址：地址链接 3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：">
@@ -253,24 +253,11 @@
 <h1 id="2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><a href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。" class="headerlink" title="2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。"></a>2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</h1><p>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></p>
 <h1 id="3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><a href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：" class="headerlink" title="3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："></a>3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</h1><a id="more"></a>
 <p>  <img data-src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
-<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1><pre><code class="bash">E:\Program Files (x86)\CodeBlocks\MinGW\bin        #即为mingw32-make.exe所在目录&lt;/pre&gt;
-</code></pre>
-<h1 id="5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行："><a href="#5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行：" class="headerlink" title="5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行："></a>5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：</h1><pre><code class="bash">cd C:\lua-5.3.1\src\
-</code></pre>
-<h1 id="6-执行编译命令即可。"><a href="#6-执行编译命令即可。" class="headerlink" title="6. 执行编译命令即可。"></a>6. 执行编译命令即可。</h1><pre><code class="bash">mingw32-make mingw
-</code></pre>
-<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：</p>
-<pre><code class="bash">  mingw:
-  $(MAKE) &quot;LUA_A=lua53.dll&quot; &quot;LUA_T=lua.exe&quot; \
-  &quot;AR=$(AR) -o&quot; &quot;RANLIB=strip --strip-unneeded&quot; \
-  &quot;SYSCFLAGS=-static&quot; &quot;SYSLIBS=&quot; &quot;SYSLDFLAGS=-s&quot; lua.exe        
-  $(MAKE) &quot;LUAC_T=luac.exe&quot; luac.exe
-  # 修改&quot;SYSCFLAGS=-DLUA_BUILD_AS_DLL&quot; --&gt; &quot;SYSCFLAGS=-static&quot;
-  # &quot;AR=$(CC) -shared -o&quot; --&gt; &quot;AR=$(AR) -o&quot;
-  # &quot;LUA_A=lua53.dll&quot; --&gt; &quot;LUA_A=lua53.a&quot;
-</code></pre>
-<h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1><pre><code class="bash">  mingw32-make mingw
-</code></pre>
+<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\Program Files (x86)\CodeBlocks\MinGW\bin		<span class="comment">#即为mingw32-make.exe所在目录&lt;/pre&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行："><a href="#5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行：" class="headerlink" title="5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行："></a>5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\lua-5.3.1\src\</span><br></pre></td></tr></table></figure>
+<h1 id="6-执行编译命令即可。"><a href="#6-执行编译命令即可。" class="headerlink" title="6. 执行编译命令即可。"></a>6. 执行编译命令即可。</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
+<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mingw:</span><br><span class="line">$(MAKE) <span class="string">"LUA_A=lua53.dll"</span> <span class="string">"LUA_T=lua.exe"</span> \</span><br><span class="line"><span class="string">"AR=<span class="variable">$(AR)</span> -o"</span> <span class="string">"RANLIB=strip --strip-unneeded"</span> \</span><br><span class="line"><span class="string">"SYSCFLAGS=-static"</span> <span class="string">"SYSLIBS="</span> <span class="string">"SYSLDFLAGS=-s"</span> lua.exe		</span><br><span class="line">$(MAKE) <span class="string">"LUAC_T=luac.exe"</span> luac.exe</span><br><span class="line"><span class="comment"># 修改"SYSCFLAGS=-DLUA_BUILD_AS_DLL" --&gt; "SYSCFLAGS=-static"</span></span><br><span class="line"><span class="comment"># "AR=$(CC) -shared -o" --&gt; "AR=$(AR) -o"</span></span><br><span class="line"><span class="comment"># "LUA_A=lua53.dll" --&gt; "LUA_A=lua53.a"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
 <p><strong>–本文结束–</strong></p>
 
     </div>
@@ -411,8 +398,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ethan</span>
 </div>
-<body onload="PR.prettyPrint()">
-</body>
+
         
 
 
@@ -669,16 +655,4 @@ window.addEventListener('pjax:success', () => {
 
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css" type="text/javascript"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-  });
-</script>
-<style rel='text/css'> li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: decimal !important;
-}
-</style>
-
 </html>

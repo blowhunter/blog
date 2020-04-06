@@ -18,21 +18,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
+    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Mysql自增ID重置，不需要删除数据`update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;  `">
+  <meta name="description" content="Mysql自增ID重置，不需要删除数据1update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;">
 <meta name="keywords" content="blog,博客,日记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql使用笔记">
 <meta property="og:url" content="http://blowhunter.cn/2018/06/15/mysql使用笔记/index.html">
 <meta property="og:site_name" content="雪影风清">
-<meta property="og:description" content="Mysql自增ID重置，不需要删除数据`update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;  `">
+<meta property="og:description" content="Mysql自增ID重置，不需要删除数据1update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-06-15T04:05:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql使用笔记">
-<meta name="twitter:description" content="Mysql自增ID重置，不需要删除数据`update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;  `">
+<meta name="twitter:description" content="Mysql自增ID重置，不需要删除数据1update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;">
 
 <link rel="canonical" href="http://blowhunter.cn/2018/06/15/mysql使用笔记/">
 
@@ -234,9 +234,9 @@
 
       
         <ol>
-<li>Mysql自增ID重置，不需要删除数据<br><code>`</code><br>update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;</li>
+<li>Mysql自增ID重置，不需要删除数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> table_name <span class="keyword">SET</span> <span class="keyword">id</span> = <span class="keyword">id</span> - ( <span class="keyword">select</span> <span class="keyword">min</span> <span class="keyword">from</span> ( <span class="keyword">select</span> <span class="keyword">MIN</span>(<span class="keyword">id</span>) <span class="keyword">as</span> <span class="keyword">min</span> <span class="keyword">from</span> table_name) <span class="keyword">as</span> t) - <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p><code>`</code></p>
 
     </div>
 
@@ -376,8 +376,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ethan</span>
 </div>
-<body onload="PR.prettyPrint()">
-</body>
+
         
 
 
@@ -634,16 +633,4 @@ window.addEventListener('pjax:success', () => {
 
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css" type="text/javascript"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-  });
-</script>
-<style rel='text/css'> li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: decimal !important;
-}
-</style>
-
 </html>

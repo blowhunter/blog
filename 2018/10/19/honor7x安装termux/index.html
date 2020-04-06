@@ -18,21 +18,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
+    var CONFIG = {"hostname":"blowhunter.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true},"motion":{"enable":false},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="honor7x上安装termux，可以实现很多功能 打开google play 搜索termux，安装 7x上打开termux，先使用命令升级pkg update">
+  <meta name="description" content="honor7x上安装termux，可以实现很多功能 打开google play 搜索termux，安装 7x上打开termux，先使用命令升级1pkg update">
 <meta name="keywords" content="android,terminal,termux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Honor7x安装termux">
 <meta property="og:url" content="http://blowhunter.cn/2018/10/19/honor7x安装termux/index.html">
 <meta property="og:site_name" content="雪影风清">
-<meta property="og:description" content="honor7x上安装termux，可以实现很多功能 打开google play 搜索termux，安装 7x上打开termux，先使用命令升级pkg update">
+<meta property="og:description" content="honor7x上安装termux，可以实现很多功能 打开google play 搜索termux，安装 7x上打开termux，先使用命令升级1pkg update">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-10-19T15:40:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Honor7x安装termux">
-<meta name="twitter:description" content="honor7x上安装termux，可以实现很多功能 打开google play 搜索termux，安装 7x上打开termux，先使用命令升级pkg update">
+<meta name="twitter:description" content="honor7x上安装termux，可以实现很多功能 打开google play 搜索termux，安装 7x上打开termux，先使用命令升级1pkg update">
 
 <link rel="canonical" href="http://blowhunter.cn/2018/10/19/honor7x安装termux/">
 
@@ -252,16 +252,20 @@
       
         <h1 id="honor7x上安装termux，可以实现很多功能"><a href="#honor7x上安装termux，可以实现很多功能" class="headerlink" title="honor7x上安装termux，可以实现很多功能"></a>honor7x上安装termux，可以实现很多功能</h1><ol>
 <li>打开google play 搜索termux，安装</li>
-<li>7x上打开termux，先使用命令升级<pre><code>pkg update
-</code></pre><a id="more"></a></li>
-<li>安装git curl wegt等工具<pre><code>pkg install git curl wget zsh vim openssh
-</code></pre></li>
-<li>下载termux-styling<pre><code>git clone https://github.com/blowhunter/termux-style.git
-</code></pre></li>
-<li>修改权限，安装，然后按照指引配置即可<pre><code>cd termux-style
-chmod 750 setup
-./setup
-</code></pre></li>
+<li>7x上打开termux，先使用命令升级<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">pkg update</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li><p>安装git curl wegt等工具</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg <span class="keyword">install</span> git curl wget zsh vim openssh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载termux-styling</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/blowhunter/termux-style.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改权限，安装，然后按照指引配置即可</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd termux-style</span><br><span class="line">chmod <span class="number">750</span> <span class="built_in">setup</span></span><br><span class="line">./<span class="built_in">setup</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
     </div>
@@ -407,8 +411,7 @@ chmod 750 setup
   </span>
   <span class="author" itemprop="copyrightHolder">ethan</span>
 </div>
-<body onload="PR.prettyPrint()">
-</body>
+
         
 
 
@@ -665,16 +668,4 @@ window.addEventListener('pjax:success', () => {
 
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sons-of-obsidian&amp;lang=css" type="text/javascript"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-  });
-</script>
-<style rel='text/css'> li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8 {
-  list-style-type: decimal !important;
-}
-</style>
-
 </html>

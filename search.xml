@@ -3,27 +3,10 @@
   <entry>
     <title>Docker学习记录</title>
     <url>/2019/10/11/Docker%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="1-安装Docker，略"><a href="#1-安装Docker，略" class="headerlink" title="1. 安装Docker，略"></a>1. 安装Docker，略</h2><h2 id="2-启动Docker："><a href="#2-启动Docker：" class="headerlink" title="2. 启动Docker："></a>2. 启动Docker：</h2><pre><code class="bash">sudo systemctl start docker
-</code></pre>
+    <content><![CDATA[<h2 id="1-安装Docker，略"><a href="#1-安装Docker，略" class="headerlink" title="1. 安装Docker，略"></a>1. 安装Docker，略</h2><h2 id="2-启动Docker："><a href="#2-启动Docker：" class="headerlink" title="2. 启动Docker："></a>2. 启动Docker：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="3-拉取镜像"><a href="#3-拉取镜像" class="headerlink" title="3. 拉取镜像"></a>3. 拉取镜像</h2><pre><code class="bash"># 查看已有镜像
-docker images
-# 拉取镜像
-docker search centos
-docker pull centos
-</code></pre>
-<h2 id="4-安装依赖以及下载Python3-7"><a href="#4-安装依赖以及下载Python3-7" class="headerlink" title="4. 安装依赖以及下载Python3.7"></a>4. 安装依赖以及下载Python3.7</h2><pre><code class="bash">yum install openssl-devel bzip2-devel libffi-devel
-
-# 下载源码包
-wget -c https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
-# 解压
-xz -d Python-3.7.2.tar.xz
-tar xvf Python-3.7.2.tar
-cd Python-3.7.2
-# 这里加上with-ssl 否则pip3无法使用
-./configure --prefix=/usr/local --with-ssl
-make -j &amp;&amp; make install
-</code></pre>
+<h2 id="3-拉取镜像"><a href="#3-拉取镜像" class="headerlink" title="3. 拉取镜像"></a>3. 拉取镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已有镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker search centos</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+<h2 id="4-安装依赖以及下载Python3-7"><a href="#4-安装依赖以及下载Python3-7" class="headerlink" title="4. 安装依赖以及下载Python3.7"></a>4. 安装依赖以及下载Python3.7</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install openssl-devel bzip2-devel libffi-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载源码包</span></span><br><span class="line">wget -c https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">xz -d Python-3.7.2.tar.xz</span><br><span class="line">tar xvf Python-3.7.2.tar</span><br><span class="line"><span class="built_in">cd</span> Python-3.7.2</span><br><span class="line"><span class="comment"># 这里加上with-ssl 否则pip3无法使用</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span> --with-ssl</span><br><span class="line">make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>docker</category>
@@ -36,17 +19,10 @@ make -j &amp;&amp; make install
   <entry>
     <title>ubuntu18.04Mic音频杂音处理</title>
     <url>/2019/01/12/Linux-Mic%E9%99%8D%E5%99%AA%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="1-备份目录下-etc-pulse-default-pa"><a href="#1-备份目录下-etc-pulse-default-pa" class="headerlink" title="1. 备份目录下/etc/pulse/default.pa"></a>1. 备份目录下/etc/pulse/default.pa</h2><pre><code class="bash">cp /etc/pulse/default.pa /etc/pulse/default.pa_20180112
-</code></pre>
+    <content><![CDATA[<h2 id="1-备份目录下-etc-pulse-default-pa"><a href="#1-备份目录下-etc-pulse-default-pa" class="headerlink" title="1. 备份目录下/etc/pulse/default.pa"></a>1. 备份目录下/etc/pulse/default.pa</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/pulse/default.pa /etc/pulse/default.pa_20180112</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="2-在default-pa文件后追加"><a href="#2-在default-pa文件后追加" class="headerlink" title="2. 在default.pa文件后追加"></a>2. 在default.pa文件后追加</h2><pre><code class="bash">#Active Noise Removal
-.ifexists module-echo-cancel.so
-load-module module-echo-cancel aec_method=webrtc source_name=mic source_properties=device.description=MicHD
-set-default-source &quot;mic&quot;
-.endif
-</code></pre>
-<h2 id="3-重启pulseaudio"><a href="#3-重启pulseaudio" class="headerlink" title="3. 重启pulseaudio"></a>3. 重启pulseaudio</h2><pre><code class="bash">pulseaudio -k
-</code></pre>
+<h2 id="2-在default-pa文件后追加"><a href="#2-在default-pa文件后追加" class="headerlink" title="2. 在default.pa文件后追加"></a>2. 在default.pa文件后追加</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Active Noise Removal</span></span><br><span class="line">.ifexists module-echo-cancel.so</span><br><span class="line">load-module module-echo-cancel aec_method=webrtc source_name=mic source_properties=device.description=MicHD</span><br><span class="line"><span class="built_in">set</span>-default-source <span class="string">"mic"</span></span><br><span class="line">.endif</span><br></pre></td></tr></table></figure>
+<h2 id="3-重启pulseaudio"><a href="#3-重启pulseaudio" class="headerlink" title="3. 重启pulseaudio"></a>3. 重启pulseaudio</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pulseaudio -k</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>ubuntu</category>
@@ -58,20 +34,45 @@ set-default-source &quot;mic&quot;
       </tags>
   </entry>
   <entry>
+    <title>在win8.1下使用minGW编译器编译Lua-5.3.1</title>
+    <url>/2015/08/07/Lua%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="1-首先准备好Lua的源码："><a href="#1-首先准备好Lua的源码：" class="headerlink" title="1. 首先准备好Lua的源码："></a>1. 首先准备好Lua的源码：</h1><p>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></p>
+<h1 id="2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><a href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。" class="headerlink" title="2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。"></a>2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</h1><p>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></p>
+<h1 id="3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><a href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：" class="headerlink" title="3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："></a>3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</h1><a id="more"></a>
+<p>  <img data-src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
+<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">E:\Program Files (x86)\CodeBlocks\MinGW\bin		<span class="comment">#即为mingw32-make.exe所在目录&lt;/pre&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行："><a href="#5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行：" class="headerlink" title="5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行："></a>5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\lua-5.3.1\src\</span><br></pre></td></tr></table></figure>
+<h1 id="6-执行编译命令即可。"><a href="#6-执行编译命令即可。" class="headerlink" title="6. 执行编译命令即可。"></a>6. 执行编译命令即可。</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
+<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw:</span><br><span class="line">$(MAKE) <span class="string">"LUA_A=lua53.dll"</span> <span class="string">"LUA_T=lua.exe"</span> \</span><br><span class="line"><span class="string">"AR=<span class="variable">$(AR)</span> -o"</span> <span class="string">"RANLIB=strip --strip-unneeded"</span> \</span><br><span class="line"><span class="string">"SYSCFLAGS=-static"</span> <span class="string">"SYSLIBS="</span> <span class="string">"SYSLDFLAGS=-s"</span> lua.exe		</span><br><span class="line">$(MAKE) <span class="string">"LUAC_T=luac.exe"</span> luac.exe</span><br><span class="line"><span class="comment"># 修改"SYSCFLAGS=-DLUA_BUILD_AS_DLL" --&gt; "SYSCFLAGS=-static"</span></span><br><span class="line"><span class="comment"># "AR=$(CC) -shared -o" --&gt; "AR=$(AR) -o"</span></span><br><span class="line"><span class="comment"># "LUA_A=lua53.dll" --&gt; "LUA_A=lua53.a"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
+<p><strong>–本文结束–</strong></p>
+]]></content>
+      <categories>
+        <category>Lua</category>
+      </categories>
+      <tags>
+        <tag>lua</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Honor7x安装termux</title>
     <url>/2018/10/19/honor7x%E5%AE%89%E8%A3%85termux/</url>
     <content><![CDATA[<h1 id="honor7x上安装termux，可以实现很多功能"><a href="#honor7x上安装termux，可以实现很多功能" class="headerlink" title="honor7x上安装termux，可以实现很多功能"></a>honor7x上安装termux，可以实现很多功能</h1><ol>
 <li>打开google play 搜索termux，安装</li>
-<li>7x上打开termux，先使用命令升级<pre><code>pkg update
-</code></pre><a id="more"></a></li>
-<li>安装git curl wegt等工具<pre><code>pkg install git curl wget zsh vim openssh
-</code></pre></li>
-<li>下载termux-styling<pre><code>git clone https://github.com/blowhunter/termux-style.git
-</code></pre></li>
-<li>修改权限，安装，然后按照指引配置即可<pre><code>cd termux-style
-chmod 750 setup
-./setup
-</code></pre></li>
+<li>7x上打开termux，先使用命令升级<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pkg update</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li><p>安装git curl wegt等工具</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pkg <span class="keyword">install</span> git curl wget zsh vim openssh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载termux-styling</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/blowhunter/termux-style.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改权限，安装，然后按照指引配置即可</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">cd termux-style</span><br><span class="line">chmod <span class="number">750</span> <span class="built_in">setup</span></span><br><span class="line">./<span class="built_in">setup</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 ]]></content>
       <categories>
@@ -86,48 +87,11 @@ chmod 750 setup
       </tags>
   </entry>
   <entry>
-    <title>在win8.1下使用minGW编译器编译Lua-5.3.1</title>
-    <url>/2015/08/07/Lua%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="1-首先准备好Lua的源码："><a href="#1-首先准备好Lua的源码：" class="headerlink" title="1. 首先准备好Lua的源码："></a>1. 首先准备好Lua的源码：</h1><p>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></p>
-<h1 id="2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><a href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。" class="headerlink" title="2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。"></a>2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</h1><p>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></p>
-<h1 id="3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><a href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：" class="headerlink" title="3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："></a>3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</h1><a id="more"></a>
-<p>  <img data-src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
-<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1><pre><code class="bash">E:\Program Files (x86)\CodeBlocks\MinGW\bin        #即为mingw32-make.exe所在目录&lt;/pre&gt;
-</code></pre>
-<h1 id="5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行："><a href="#5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行：" class="headerlink" title="5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行："></a>5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：</h1><pre><code class="bash">cd C:\lua-5.3.1\src\
-</code></pre>
-<h1 id="6-执行编译命令即可。"><a href="#6-执行编译命令即可。" class="headerlink" title="6. 执行编译命令即可。"></a>6. 执行编译命令即可。</h1><pre><code class="bash">mingw32-make mingw
-</code></pre>
-<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：</p>
-<pre><code class="bash">  mingw:
-  $(MAKE) &quot;LUA_A=lua53.dll&quot; &quot;LUA_T=lua.exe&quot; \
-  &quot;AR=$(AR) -o&quot; &quot;RANLIB=strip --strip-unneeded&quot; \
-  &quot;SYSCFLAGS=-static&quot; &quot;SYSLIBS=&quot; &quot;SYSLDFLAGS=-s&quot; lua.exe        
-  $(MAKE) &quot;LUAC_T=luac.exe&quot; luac.exe
-  # 修改&quot;SYSCFLAGS=-DLUA_BUILD_AS_DLL&quot; --&gt; &quot;SYSCFLAGS=-static&quot;
-  # &quot;AR=$(CC) -shared -o&quot; --&gt; &quot;AR=$(AR) -o&quot;
-  # &quot;LUA_A=lua53.dll&quot; --&gt; &quot;LUA_A=lua53.a&quot;
-</code></pre>
-<h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1><pre><code class="bash">  mingw32-make mingw
-</code></pre>
-<p><strong>–本文结束–</strong></p>
-]]></content>
-      <categories>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>lua</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kivy学习笔记</title>
     <url>/2018/10/19/kivy%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="1-我们需要在头部加载需要模块，这样才能使用"><a href="#1-我们需要在头部加载需要模块，这样才能使用" class="headerlink" title="1. 我们需要在头部加载需要模块，这样才能使用"></a>1. 我们需要在头部加载需要模块，这样才能使用</h1><pre><code class="python">#: import BoxLayout kivy.uix.boxlayout
-#: import Button kivy.uix.button
-</code></pre>
+    <content><![CDATA[<h1 id="1-我们需要在头部加载需要模块，这样才能使用"><a href="#1-我们需要在头部加载需要模块，这样才能使用" class="headerlink" title="1. 我们需要在头部加载需要模块，这样才能使用"></a>1. 我们需要在头部加载需要模块，这样才能使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#: import BoxLayout kivy.uix.boxlayout</span></span><br><span class="line"><span class="comment">#: import Button kivy.uix.button</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="然后，我们可以手动加载这个KV文件"><a href="#然后，我们可以手动加载这个KV文件" class="headerlink" title="然后，我们可以手动加载这个KV文件"></a>然后，我们可以手动加载这个KV文件</h1><pre><code class="python">Builder.load_file(&#39;./main.kv&#39;)
-</code></pre>
+<h1 id="然后，我们可以手动加载这个KV文件"><a href="#然后，我们可以手动加载这个KV文件" class="headerlink" title="然后，我们可以手动加载这个KV文件"></a>然后，我们可以手动加载这个KV文件</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Builder.load_file(<span class="string">'./main.kv'</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>python</category>
@@ -142,71 +106,28 @@ chmod 750 setup
     <title>mysql使用笔记</title>
     <url>/2018/06/15/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ol>
-<li>Mysql自增ID重置，不需要删除数据<br><code>`</code><br>update table_name SET id = id - ( select min from ( select MIN(id) as min from table_name) as t) - 1;</li>
+<li>Mysql自增ID重置，不需要删除数据<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> table_name <span class="keyword">SET</span> <span class="keyword">id</span> = <span class="keyword">id</span> - ( <span class="keyword">select</span> <span class="keyword">min</span> <span class="keyword">from</span> ( <span class="keyword">select</span> <span class="keyword">MIN</span>(<span class="keyword">id</span>) <span class="keyword">as</span> <span class="keyword">min</span> <span class="keyword">from</span> table_name) <span class="keyword">as</span> t) - <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p><code>`</code></p>
 ]]></content>
   </entry>
   <entry>
     <title>python使用smtplib和email模块发送邮件</title>
     <url>/2018/04/23/python%E4%BD%BF%E7%94%A8smtplib%E5%92%8Cemail%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="1-准备环境"><a href="#1-准备环境" class="headerlink" title="1. 准备环境"></a>1. 准备环境</h1><pre><code># 由于python2.7 内含smtplib模块，这里只需要安装email模块
-# 要查看已经安装的python模块可以使用命令：pydoc modules
-pip install email
-</code></pre><a id="more"></a>
-<h1 id="2-脚本实例"><a href="#2-脚本实例" class="headerlink" title="2. 脚本实例"></a>2. 脚本实例</h1><pre><code>#!/usr/bin/python
-
-#It&#39;s a test to send mail by mail.163.com
-
-from __future__ import print_function
-import smtplib
-from email.mime.text import MIMEText
-
-SMTP_SERVER = &quot;smtp.163.com&quot;
-SMTP_PORT  = 465
-
-def send_mail(user, pwd, to, subject, text):
-    msg = MIMEText(text)
-    msg[&#39;From&#39;] = user
-    msg[&#39;To&#39;] = to
-    msg[&#39;subject&#39;] = subject
-
-    smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-    print(&#39;Connecting To Mail Server.&#39;)
-
-    try:
-        smtp_server.ehlo()
-        print(&#39;Starting Encrypted Section.&#39;)
-
-        smtp_server.starttls()
-        smtp_server.ehlo()
-        print(&#39;Logging Into Mail Server&#39;)
-
-        smtp_server.login(user, pwd)
-        print(&#39;Sending Mail.&#39;)
-        smtp_server.sendmail(user, to, msg.as_string())
-    except Exception as err:
-        print(&#39;Sending Mail Failed: {0}&#39;.format(err))
-    finally:
-        smtp_server.quit()
-def main():
-    send_mail(&#39;blowhunter@163.com&#39;, &#39;****&#39;, &#39;blowhunter@163.com&#39;, &#39;It is a test from my python poject&#39;, &#39;You get me!&#39;)
-
-if __name__ == &#39;__main__&#39;:
-    main()
-
-</code></pre>]]></content>
+    <content><![CDATA[<h1 id="1-准备环境"><a href="#1-准备环境" class="headerlink" title="1. 准备环境"></a>1. 准备环境</h1><figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 由于python2.7 内含smtplib模块，这里只需要安装email模块</span></span><br><span class="line"><span class="meta"># 要查看已经安装的python模块可以使用命令：pydoc modules</span></span><br><span class="line">pip install email</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="2-脚本实例"><a href="#2-脚本实例" class="headerlink" title="2. 脚本实例"></a>2. 脚本实例</h1><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#It's a test to send mail by mail.163.com</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> __future__ import print_function</span><br><span class="line">import smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text import MIMEText</span><br><span class="line"></span><br><span class="line">SMTP_SERVER = <span class="string">"smtp.163.com"</span></span><br><span class="line">SMTP_PORT  = 465</span><br><span class="line"></span><br><span class="line">def send_mail(user, pwd, <span class="keyword">to</span>, subject, text):</span><br><span class="line">    msg = MIMEText(text)</span><br><span class="line">    msg[<span class="string">'From'</span>] = user</span><br><span class="line">    msg[<span class="string">'To'</span>] = <span class="keyword">to</span></span><br><span class="line">    msg[<span class="string">'subject'</span>] = subject</span><br><span class="line"></span><br><span class="line">    smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">'Connecting To Mail Server.'</span>)</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        smtp_server.ehlo()</span><br><span class="line">        <span class="builtin-name">print</span>(<span class="string">'Starting Encrypted Section.'</span>)</span><br><span class="line"></span><br><span class="line">        smtp_server.starttls()</span><br><span class="line">        smtp_server.ehlo()</span><br><span class="line">        <span class="builtin-name">print</span>(<span class="string">'Logging Into Mail Server'</span>)</span><br><span class="line"></span><br><span class="line">        smtp_server.login(user, pwd)</span><br><span class="line">        <span class="builtin-name">print</span>(<span class="string">'Sending Mail.'</span>)</span><br><span class="line">        smtp_server.sendmail(user, <span class="keyword">to</span>, msg.as_string())</span><br><span class="line">    except Exception as err:</span><br><span class="line">        <span class="builtin-name">print</span>(<span class="string">'Sending Mail Failed: &#123;0&#125;'</span>.format(err))</span><br><span class="line">    finally:</span><br><span class="line">        smtp_server.quit()</span><br><span class="line">def main():</span><br><span class="line">    send_mail(<span class="string">'blowhunter@163.com'</span>, <span class="string">'****'</span>, <span class="string">'blowhunter@163.com'</span>, <span class="string">'It is a test from my python poject'</span>, <span class="string">'You get me!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>archlinux安装awesomeWM需要的依赖</title>
     <url>/2019/12/12/%E5%AE%89%E8%A3%85awesome%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="archlinux安装awesomeWM需要的依赖"><a href="#archlinux安装awesomeWM需要的依赖" class="headerlink" title="archlinux安装awesomeWM需要的依赖"></a>archlinux安装awesomeWM需要的依赖</h1><ol>
-<li>install awesomeWM required packages<pre><code class="bash">sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci
-magemagick cmake luajit libxdg-basedir
-</code></pre>
+<li><p>install awesomeWM required packages</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci</span><br><span class="line"> magemagick cmake luajit libxdg-basedir</span><br></pre></td></tr></table></figure>
 </li>
-<li>安装awesomeWM<pre><code class="bash">sudo pacman -S awesomewm
-</code></pre>
+<li><p>安装awesomeWM</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S awesomewm</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 ]]></content>
@@ -224,89 +145,22 @@ magemagick cmake luajit libxdg-basedir
   <entry>
     <title>python的Django使用教程</title>
     <url>/2018/02/23/python%E7%9A%84Django%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="1-建立虚拟环境"><a href="#1-建立虚拟环境" class="headerlink" title="1. 建立虚拟环境"></a>1. 建立虚拟环境</h1><h2 id="1-1-安装虚拟环境软件"><a href="#1-1-安装虚拟环境软件" class="headerlink" title="1.1 安装虚拟环境软件"></a>1.1 安装虚拟环境软件</h2><pre><code class="bash">pip install virtualenv
-</code></pre>
+    <content><![CDATA[<h1 id="1-建立虚拟环境"><a href="#1-建立虚拟环境" class="headerlink" title="1. 建立虚拟环境"></a>1. 建立虚拟环境</h1><h2 id="1-1-安装虚拟环境软件"><a href="#1-1-安装虚拟环境软件" class="headerlink" title="1.1 安装虚拟环境软件"></a>1.1 安装虚拟环境软件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
 <h2 id="1-2-克隆一个环境为虚拟环境"><a href="#1-2-克隆一个环境为虚拟环境" class="headerlink" title="1.2 克隆一个环境为虚拟环境"></a>1.2 克隆一个环境为虚拟环境</h2><a id="more"></a>
-<pre><code class="bash">virtualenv python2.7
-cd python2.7
-</code></pre>
-<h1 id="2-安装Django"><a href="#2-安装Django" class="headerlink" title="2. 安装Django"></a>2. 安装Django</h1><pre><code class="bash"># 使用==选择要安装的版本
-pip install django==1.11.3
-</code></pre>
-<h1 id="3-创建项目"><a href="#3-创建项目" class="headerlink" title="3. 创建项目"></a>3. 创建项目</h1><pre><code class="bash">django-admin startproject mytest
-cd mytest
-</code></pre>
-<h1 id="4-创建表结构"><a href="#4-创建表结构" class="headerlink" title="4. 创建表结构"></a>4. 创建表结构</h1><pre><code class="bash">python manage.py migrate
-</code></pre>
-<h1 id="5-可以进行简单的测试"><a href="#5-可以进行简单的测试" class="headerlink" title="5. 可以进行简单的测试"></a>5. 可以进行简单的测试</h1><pre><code class="bash">python manage.py runserver
-
-# 默认的可以打开127.0.0.1:8000
-</code></pre>
-<h1 id="6-创建超级管理员用户"><a href="#6-创建超级管理员用户" class="headerlink" title="6. 创建超级管理员用户"></a>6. 创建超级管理员用户</h1><pre><code class="bash">python manage.py createsuperuser
-# 输入用户名、邮箱和密码
-</code></pre>
-<h1 id="7-登录admin的后台"><a href="#7-登录admin的后台" class="headerlink" title="7. 登录admin的后台"></a>7. 登录admin的后台</h1><pre><code class="bash">#在页面可以使用刚才创建的用户和密码进行登录
-# 127.0.0.1:8000/admin
-</code></pre>
-<h1 id="8-创建app应用"><a href="#8-创建app应用" class="headerlink" title="8. 创建app应用"></a>8. 创建app应用</h1><pre><code class="bash">python manage.py startapp myapp
-</code></pre>
-<h1 id="9-将app配置为project-mytest的app"><a href="#9-将app配置为project-mytest的app" class="headerlink" title="9. 将app配置为project-mytest的app"></a>9. 将app配置为project-mytest的app</h1><pre><code class="python"># 先修改myapp下的两个文件
-# 1. 修改views.py
-# 添加内容
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.shortcuts import render
-from django.http import HttpResponse
-
-# Create your views here.
-def index(request):
-    return HttpResponse(&quot;Hello, world! You&#39;re  at my test app index!&quot;)
-</code></pre>
-<pre><code class="python"># 2. 新建urls.py 用于路由刚才新增的views
-# -*- coding: utf-8 -*-
-from django.conf.urls import url
-from . import views
-
-urlpatterns = [
-    url(&#39;&#39;, views.index, name=&#39;index&#39;),
-]
-
-</code></pre>
-<pre><code class="python"># 然后修改mytest目录下的settings.py
-# 将新增的app配置文件增加到其中的Installed_apps
-# Application definition
-
-INSTALLED_APPS = [
-    &#39;django.contrib.admin&#39;,
-    &#39;django.contrib.auth&#39;,
-    &#39;django.contrib.contenttypes&#39;,
-    &#39;django.contrib.sessions&#39;,
-    &#39;django.contrib.messages&#39;,
-    &#39;django.contrib.staticfiles&#39;,
-    &#39;myapp.apps.MyappConfig&#39;,
-]
-</code></pre>
-<pre><code class="python"># 然后在mytest的路由中urls.py 新增到myapp的路径
-# 因为要使用include所以在import中的django.conf.urls中导入include
-from django.conf.urls import url, include
-from django.contrib import admin
-
-urlpatterns = [
-    url(r&#39;^admin/&#39;, admin.site.urls),
-    url(r&#39;^myapp/&#39;, include(&#39;myapp.urls&#39;)),
-]
-</code></pre>
-<h1 id="10-测试新增的myapp是否可用"><a href="#10-测试新增的myapp是否可用" class="headerlink" title="10. 测试新增的myapp是否可用"></a>10. 测试新增的myapp是否可用</h1><pre><code class="bash">python manage.py runserver
-
-# 在浏览器中输入地址：127.0.0.1:8000/myapp/
-</code></pre>
-<p>–<strong>填坑</strong>–<br>当前的Django版本无法引入path，所以官网的教程需要针对2.0版本，本版本可以用url来替代path获取路径以及加载等</p>
-<pre><code class="python">from django.conf.urls import url
-urlpatterns = [
-  url(&#39;&#39;, views.index, name=&#39;index&#39;)
-]
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">virtualenv python2.7</span><br><span class="line"><span class="built_in">cd</span> python2.7</span><br></pre></td></tr></table></figure>
+<h1 id="2-安装Django"><a href="#2-安装Django" class="headerlink" title="2. 安装Django"></a>2. 安装Django</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用==选择要安装的版本</span></span><br><span class="line">pip install django==1.11.3</span><br></pre></td></tr></table></figure>
+<h1 id="3-创建项目"><a href="#3-创建项目" class="headerlink" title="3. 创建项目"></a>3. 创建项目</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject mytest</span><br><span class="line"><span class="built_in">cd</span> mytest</span><br></pre></td></tr></table></figure>
+<h1 id="4-创建表结构"><a href="#4-创建表结构" class="headerlink" title="4. 创建表结构"></a>4. 创建表结构</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<h1 id="5-可以进行简单的测试"><a href="#5-可以进行简单的测试" class="headerlink" title="5. 可以进行简单的测试"></a>5. 可以进行简单的测试</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认的可以打开127.0.0.1:8000</span></span><br></pre></td></tr></table></figure>
+<h1 id="6-创建超级管理员用户"><a href="#6-创建超级管理员用户" class="headerlink" title="6. 创建超级管理员用户"></a>6. 创建超级管理员用户</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br><span class="line"><span class="comment"># 输入用户名、邮箱和密码</span></span><br></pre></td></tr></table></figure>
+<h1 id="7-登录admin的后台"><a href="#7-登录admin的后台" class="headerlink" title="7. 登录admin的后台"></a>7. 登录admin的后台</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在页面可以使用刚才创建的用户和密码进行登录</span></span><br><span class="line"><span class="comment"># 127.0.0.1:8000/admin</span></span><br></pre></td></tr></table></figure>
+<h1 id="8-创建app应用"><a href="#8-创建app应用" class="headerlink" title="8. 创建app应用"></a>8. 创建app应用</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py startapp myapp</span><br></pre></td></tr></table></figure>
+<h1 id="9-将app配置为project-mytest的app"><a href="#9-将app配置为project-mytest的app" class="headerlink" title="9. 将app配置为project-mytest的app"></a>9. 将app配置为project-mytest的app</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先修改myapp下的两个文件</span></span><br><span class="line"><span class="comment"># 1. 修改views.py</span></span><br><span class="line"><span class="comment"># 添加内容</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> unicode_literals</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"Hello, world! You're  at my test app index!"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 2. 新建urls.py 用于路由刚才新增的views</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 然后修改mytest目录下的settings.py</span></span><br><span class="line"><span class="comment"># 将新增的app配置文件增加到其中的Installed_apps</span></span><br><span class="line"><span class="comment"># Application definition</span></span><br><span class="line"></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'myapp.apps.MyappConfig'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 然后在mytest的路由中urls.py 新增到myapp的路径</span></span><br><span class="line"><span class="comment"># 因为要使用include所以在import中的django.conf.urls中导入include</span></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url, include</span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^myapp/'</span>, include(<span class="string">'myapp.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h1 id="10-测试新增的myapp是否可用"><a href="#10-测试新增的myapp是否可用" class="headerlink" title="10. 测试新增的myapp是否可用"></a>10. 测试新增的myapp是否可用</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在浏览器中输入地址：127.0.0.1:8000/myapp/</span></span><br></pre></td></tr></table></figure>
+<p>–<strong>填坑</strong>–<br>当前的Django版本无法引入path，所以官网的教程需要针对2.0版本，本版本可以用url来替代path获取路径以及加载等<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line">urlpatterns = [</span><br><span class="line">  url(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       <categories>
         <category>python</category>
