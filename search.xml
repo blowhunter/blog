@@ -120,29 +120,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>archlinux安装awesomeWM需要的依赖</title>
-    <url>/2019/12/12/%E5%AE%89%E8%A3%85awesome%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="archlinux安装awesomeWM需要的依赖"><a href="#archlinux安装awesomeWM需要的依赖" class="headerlink" title="archlinux安装awesomeWM需要的依赖"></a>archlinux安装awesomeWM需要的依赖</h1><ol>
-<li><p>install awesomeWM required packages</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci</span><br><span class="line"> magemagick cmake luajit libxdg-basedir</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装awesomeWM</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S awesomewm</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>archlinux</category>
-        <category>awesomeWM</category>
-        <category>桌面管理器</category>
-      </categories>
-      <tags>
-        <tag>archlinux</tag>
-        <tag>awesomeWM</tag>
-        <tag>windowManager</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python的Django使用教程</title>
     <url>/2018/02/23/python%E7%9A%84Django%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="1-建立虚拟环境"><a href="#1-建立虚拟环境" class="headerlink" title="1. 建立虚拟环境"></a>1. 建立虚拟环境</h1><h2 id="1-1-安装虚拟环境软件"><a href="#1-1-安装虚拟环境软件" class="headerlink" title="1.1 安装虚拟环境软件"></a>1.1 安装虚拟环境软件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
@@ -165,5 +142,28 @@
       <categories>
         <category>python</category>
       </categories>
+  </entry>
+  <entry>
+    <title>archlinux安装awesomeWM需要的依赖</title>
+    <url>/2019/12/12/%E5%AE%89%E8%A3%85awesome%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="archlinux安装awesomeWM需要的依赖"><a href="#archlinux安装awesomeWM需要的依赖" class="headerlink" title="archlinux安装awesomeWM需要的依赖"></a>archlinux安装awesomeWM需要的依赖</h1><ol>
+<li><p>install awesomeWM required packages</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci</span><br><span class="line"> magemagick cmake luajit libxdg-basedir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装awesomeWM</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">sudo pacman -S awesomewm</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>archlinux</category>
+        <category>awesomeWM</category>
+        <category>桌面管理器</category>
+      </categories>
+      <tags>
+        <tag>archlinux</tag>
+        <tag>awesomeWM</tag>
+        <tag>windowManager</tag>
+      </tags>
   </entry>
 </search>

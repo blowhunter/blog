@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Fondamento:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Inziu IosevkaCC TC,Meslo LG M for Powerline:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|IBM Plex Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="雪影风清">
 <meta property="og:description" content="archlinux安装awesomeWM需要的依赖 install awesomeWM required packages 12sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci magemagick cmake luajit libxdg-basedir  安装awesomeWM 1su">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-05T13:36:18.255Z">
+<meta property="og:updated_time" content="2020-04-07T13:18:52.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="archlinux安装awesomeWM需要的依赖">
 <meta name="twitter:description" content="archlinux安装awesomeWM需要的依赖 install awesomeWM required packages 12sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci magemagick cmake luajit libxdg-basedir  安装awesomeWM 1su">
@@ -194,7 +194,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Ethan">
-      <meta itemprop="description" content="努力在前行中认清本我，真我，摒弃繁负">
+      <meta itemprop="description" content="摒弃繁负,寻找真我">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-05 21:36:18" itemprop="dateModified" datetime="2020-04-05T21:36:18+08:00">2020-04-05</time>
+                <time title="修改时间：2020-04-07 21:18:52" itemprop="dateModified" datetime="2020-04-07T21:18:52+08:00">2020-04-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,10 +259,10 @@
       
         <h1 id="archlinux安装awesomeWM需要的依赖"><a href="#archlinux安装awesomeWM需要的依赖" class="headerlink" title="archlinux安装awesomeWM需要的依赖"></a>archlinux安装awesomeWM需要的依赖</h1><ol>
 <li><p>install awesomeWM required packages</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci</span><br><span class="line"> magemagick cmake luajit libxdg-basedir</span><br></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xcb-util-wm xcb-util-cursor xcb-util-keysyms asciidoc xmlto ldoci</span><br><span class="line"> magemagick cmake luajit libxdg-basedir</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装awesomeWM</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S awesomewm</span><br></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S awesomewm</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -353,7 +353,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Ethan</p>
-  <div class="site-description" itemprop="description">努力在前行中认清本我，真我，摒弃繁负</div>
+  <div class="site-description" itemprop="description">摒弃繁负,寻找真我</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -437,14 +437,9 @@
                 console.error('Failed to save visitor count', error);
               });
           } else {
-              Counter('post', '/classes/Counter', { title, url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.error('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -471,7 +466,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"TQrTMDzWVKlDl95suANwzvQY-gzGzoHsz","app_key":"IPaqAw7xgwi8NQ7rJSH6ijG2"};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"DuH13QbM2KwXF38AHrKldzjv-MdYXbMMI","app_key":"7dMySQRssePyzJ7MjKWMg8uf","security":true,"betterPerformance":true};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {

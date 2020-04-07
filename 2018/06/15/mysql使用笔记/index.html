@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Fondamento:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Inziu IosevkaCC TC,Meslo LG M for Powerline:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|IBM Plex Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
@@ -194,7 +194,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Ethan">
-      <meta itemprop="description" content="努力在前行中认清本我，真我，摒弃繁负">
+      <meta itemprop="description" content="摒弃繁负,寻找真我">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -323,7 +323,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Ethan</p>
-  <div class="site-description" itemprop="description">努力在前行中认清本我，真我，摒弃繁负</div>
+  <div class="site-description" itemprop="description">摒弃繁负,寻找真我</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -407,14 +407,9 @@
                 console.error('Failed to save visitor count', error);
               });
           } else {
-              Counter('post', '/classes/Counter', { title, url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.error('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -441,7 +436,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"TQrTMDzWVKlDl95suANwzvQY-gzGzoHsz","app_key":"IPaqAw7xgwi8NQ7rJSH6ijG2"};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"DuH13QbM2KwXF38AHrKldzjv-MdYXbMMI","app_key":"7dMySQRssePyzJ7MjKWMg8uf","security":true,"betterPerformance":true};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
