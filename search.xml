@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Docker学习记录</title>
-    <url>/2019/10/11/Docker%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="1-安装Docker，略"><a href="#1-安装Docker，略" class="headerlink" title="1. 安装Docker，略"></a>1. 安装Docker，略</h2><h2 id="2-启动Docker："><a href="#2-启动Docker：" class="headerlink" title="2. 启动Docker："></a>2. 启动Docker：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="3-拉取镜像"><a href="#3-拉取镜像" class="headerlink" title="3. 拉取镜像"></a>3. 拉取镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已有镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker search centos</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
-<h2 id="4-安装依赖以及下载Python3-7"><a href="#4-安装依赖以及下载Python3-7" class="headerlink" title="4. 安装依赖以及下载Python3.7"></a>4. 安装依赖以及下载Python3.7</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install openssl-devel bzip2-devel libffi-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载源码包</span></span><br><span class="line">wget -c https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">xz -d Python-3.7.2.tar.xz</span><br><span class="line">tar xvf Python-3.7.2.tar</span><br><span class="line"><span class="built_in">cd</span> Python-3.7.2</span><br><span class="line"><span class="comment"># 这里加上with-ssl 否则pip3无法使用</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span> --with-ssl</span><br><span class="line">make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>docker</category>
-        <category>ubuntu</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ubuntu18.04Mic音频杂音处理</title>
     <url>/2019/01/12/Linux-Mic%E9%99%8D%E5%99%AA%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="1-备份目录下-etc-pulse-default-pa"><a href="#1-备份目录下-etc-pulse-default-pa" class="headerlink" title="1. 备份目录下/etc/pulse/default.pa"></a>1. 备份目录下/etc/pulse/default.pa</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/pulse/default.pa /etc/pulse/default.pa_20180112</span><br></pre></td></tr></table></figure>
@@ -84,6 +68,22 @@
         <tag>android</tag>
         <tag>terminal</tag>
         <tag>termux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker学习记录</title>
+    <url>/2019/10/11/Docker%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="1-安装Docker，略"><a href="#1-安装Docker，略" class="headerlink" title="1. 安装Docker，略"></a>1. 安装Docker，略</h2><h2 id="2-启动Docker："><a href="#2-启动Docker：" class="headerlink" title="2. 启动Docker："></a>2. 启动Docker：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="3-拉取镜像"><a href="#3-拉取镜像" class="headerlink" title="3. 拉取镜像"></a>3. 拉取镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已有镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker search centos</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+<h2 id="4-安装依赖以及下载Python3-7"><a href="#4-安装依赖以及下载Python3-7" class="headerlink" title="4. 安装依赖以及下载Python3.7"></a>4. 安装依赖以及下载Python3.7</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install openssl-devel bzip2-devel libffi-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载源码包</span></span><br><span class="line">wget -c https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">xz -d Python-3.7.2.tar.xz</span><br><span class="line">tar xvf Python-3.7.2.tar</span><br><span class="line"><span class="built_in">cd</span> Python-3.7.2</span><br><span class="line"><span class="comment"># 这里加上with-ssl 否则pip3无法使用</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span> --with-ssl</span><br><span class="line">make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>docker</category>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
