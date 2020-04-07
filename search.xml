@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Docker学习记录</title>
+    <url>/2019/10/11/Docker%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="1-安装Docker，略"><a href="#1-安装Docker，略" class="headerlink" title="1. 安装Docker，略"></a>1. 安装Docker，略</h2><h2 id="2-启动Docker："><a href="#2-启动Docker：" class="headerlink" title="2. 启动Docker："></a>2. 启动Docker：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="3-拉取镜像"><a href="#3-拉取镜像" class="headerlink" title="3. 拉取镜像"></a>3. 拉取镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已有镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker search centos</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+<h2 id="4-安装依赖以及下载Python3-7"><a href="#4-安装依赖以及下载Python3-7" class="headerlink" title="4. 安装依赖以及下载Python3.7"></a>4. 安装依赖以及下载Python3.7</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install openssl-devel bzip2-devel libffi-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载源码包</span></span><br><span class="line">wget -c https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">xz -d Python-3.7.2.tar.xz</span><br><span class="line">tar xvf Python-3.7.2.tar</span><br><span class="line"><span class="built_in">cd</span> Python-3.7.2</span><br><span class="line"><span class="comment"># 这里加上with-ssl 否则pip3无法使用</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span> --with-ssl</span><br><span class="line">make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>docker</category>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ubuntu18.04Mic音频杂音处理</title>
     <url>/2019/01/12/Linux-Mic%E9%99%8D%E5%99%AA%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="1-备份目录下-etc-pulse-default-pa"><a href="#1-备份目录下-etc-pulse-default-pa" class="headerlink" title="1. 备份目录下/etc/pulse/default.pa"></a>1. 备份目录下/etc/pulse/default.pa</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/pulse/default.pa /etc/pulse/default.pa_20180112</span><br></pre></td></tr></table></figure>
@@ -15,27 +31,6 @@
       <tags>
         <tag>ubuntu</tag>
         <tag>mic</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在win8.1下使用minGW编译器编译Lua-5.3.1</title>
-    <url>/2015/08/07/Lua%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="1-首先准备好Lua的源码："><a href="#1-首先准备好Lua的源码：" class="headerlink" title="1. 首先准备好Lua的源码："></a>1. 首先准备好Lua的源码：</h1><p>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></p>
-<h1 id="2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><a href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。" class="headerlink" title="2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。"></a>2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</h1><p>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></p>
-<h1 id="3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><a href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：" class="headerlink" title="3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："></a>3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</h1><a id="more"></a>
-<p>  <img data-src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
-<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">E:\Program Files (x86)\CodeBlocks\MinGW\bin		<span class="comment">#即为mingw32-make.exe所在目录&lt;/pre&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行："><a href="#5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行：" class="headerlink" title="5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行："></a>5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\lua-5.3.1\src\</span><br></pre></td></tr></table></figure>
-<h1 id="6-执行编译命令即可。"><a href="#6-执行编译命令即可。" class="headerlink" title="6. 执行编译命令即可。"></a>6. 执行编译命令即可。</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
-<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw:</span><br><span class="line">$(MAKE) <span class="string">"LUA_A=lua53.dll"</span> <span class="string">"LUA_T=lua.exe"</span> \</span><br><span class="line"><span class="string">"AR=<span class="variable">$(AR)</span> -o"</span> <span class="string">"RANLIB=strip --strip-unneeded"</span> \</span><br><span class="line"><span class="string">"SYSCFLAGS=-static"</span> <span class="string">"SYSLIBS="</span> <span class="string">"SYSLDFLAGS=-s"</span> lua.exe		</span><br><span class="line">$(MAKE) <span class="string">"LUAC_T=luac.exe"</span> luac.exe</span><br><span class="line"><span class="comment"># 修改"SYSCFLAGS=-DLUA_BUILD_AS_DLL" --&gt; "SYSCFLAGS=-static"</span></span><br><span class="line"><span class="comment"># "AR=$(CC) -shared -o" --&gt; "AR=$(AR) -o"</span></span><br><span class="line"><span class="comment"># "LUA_A=lua53.dll" --&gt; "LUA_A=lua53.a"</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
-<p><strong>–本文结束–</strong></p>
-]]></content>
-      <categories>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>lua</tag>
       </tags>
   </entry>
   <entry>
@@ -71,19 +66,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Docker学习记录</title>
-    <url>/2019/10/11/Docker%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="1-安装Docker，略"><a href="#1-安装Docker，略" class="headerlink" title="1. 安装Docker，略"></a>1. 安装Docker，略</h2><h2 id="2-启动Docker："><a href="#2-启动Docker：" class="headerlink" title="2. 启动Docker："></a>2. 启动Docker：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="3-拉取镜像"><a href="#3-拉取镜像" class="headerlink" title="3. 拉取镜像"></a>3. 拉取镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已有镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker search centos</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
-<h2 id="4-安装依赖以及下载Python3-7"><a href="#4-安装依赖以及下载Python3-7" class="headerlink" title="4. 安装依赖以及下载Python3.7"></a>4. 安装依赖以及下载Python3.7</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install openssl-devel bzip2-devel libffi-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载源码包</span></span><br><span class="line">wget -c https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">xz -d Python-3.7.2.tar.xz</span><br><span class="line">tar xvf Python-3.7.2.tar</span><br><span class="line"><span class="built_in">cd</span> Python-3.7.2</span><br><span class="line"><span class="comment"># 这里加上with-ssl 否则pip3无法使用</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span> --with-ssl</span><br><span class="line">make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+    <title>在win8.1下使用minGW编译器编译Lua-5.3.1</title>
+    <url>/2015/08/07/Lua%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="1-首先准备好Lua的源码："><a href="#1-首先准备好Lua的源码：" class="headerlink" title="1. 首先准备好Lua的源码："></a>1. 首先准备好Lua的源码：</h1><p>下载地址：（官网）<a href="http://www.lua.org/download.html" target="_blank" rel="noopener">地址链接</a></p>
+<h1 id="2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。"><a href="#2-准备好minGW编译器，这里用的是codeblocks的minGW编译器。" class="headerlink" title="2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。"></a>2. 准备好minGW编译器，这里用的是codeblocks的minGW编译器。</h1><p>下载地址：<a href="http://www.codeblocks.org/downloads/26#windows" target="_blank" rel="noopener">地址链接</a><!-- excerpt --></p>
+<h1 id="3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："><a href="#3-安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：" class="headerlink" title="3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图："></a>3. 安装完毕后，需要在系统环境变量中进行编译器路径的设置，如图：</h1><a id="more"></a>
+<p>  <img data-src="https://raw.githubusercontent.com/blowhunter/blog/gh-pages/images/2005/08/systemEnvironmentPath.jpg" alt="系统环境变量设置"></p>
+<h1 id="4-然后键入以下路径，请按照安装路径自行修改"><a href="#4-然后键入以下路径，请按照安装路径自行修改" class="headerlink" title="4. 然后键入以下路径，请按照安装路径自行修改"></a>4. 然后键入以下路径，请按照安装路径自行修改</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">E:\Program Files (x86)\CodeBlocks\MinGW\bin		<span class="comment">#即为mingw32-make.exe所在目录&lt;/pre&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行："><a href="#5-将下载好的源码Lua-5-3-1-tar-gz解压到C-目录下，然后win-R键入cmd进入命令行：" class="headerlink" title="5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行："></a>5. 将下载好的源码Lua-5.3.1.tar.gz解压到C:\目录下，然后win+R键入cmd进入命令行：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\lua-5.3.1\src\</span><br></pre></td></tr></table></figure>
+<h1 id="6-执行编译命令即可。"><a href="#6-执行编译命令即可。" class="headerlink" title="6. 执行编译命令即可。"></a>6. 执行编译命令即可。</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
+<h1 id="7-进阶："><a href="#7-进阶：" class="headerlink" title="7. 进阶："></a>7. <strong>进阶：</strong></h1><p>对Makefile进行修改，以实现特别的编译需求，比如将lua-5.3.1\src\Makefile文件里面mingw项下的编译选项进行修改：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw:</span><br><span class="line">$(MAKE) <span class="string">"LUA_A=lua53.dll"</span> <span class="string">"LUA_T=lua.exe"</span> \</span><br><span class="line"><span class="string">"AR=<span class="variable">$(AR)</span> -o"</span> <span class="string">"RANLIB=strip --strip-unneeded"</span> \</span><br><span class="line"><span class="string">"SYSCFLAGS=-static"</span> <span class="string">"SYSLIBS="</span> <span class="string">"SYSLDFLAGS=-s"</span> lua.exe		</span><br><span class="line">$(MAKE) <span class="string">"LUAC_T=luac.exe"</span> luac.exe</span><br><span class="line"><span class="comment"># 修改"SYSCFLAGS=-DLUA_BUILD_AS_DLL" --&gt; "SYSCFLAGS=-static"</span></span><br><span class="line"><span class="comment"># "AR=$(CC) -shared -o" --&gt; "AR=$(AR) -o"</span></span><br><span class="line"><span class="comment"># "LUA_A=lua53.dll" --&gt; "LUA_A=lua53.a"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="8-然后执行编译命令："><a href="#8-然后执行编译命令：" class="headerlink" title="8. 然后执行编译命令："></a>8. 然后执行编译命令：</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mingw32-make mingw</span><br></pre></td></tr></table></figure>
+<p><strong>–本文结束–</strong></p>
 ]]></content>
       <categories>
-        <category>docker</category>
-        <category>ubuntu</category>
+        <category>Lua</category>
       </categories>
       <tags>
-        <tag>docker</tag>
+        <tag>lua</tag>
       </tags>
   </entry>
   <entry>
